@@ -13,9 +13,11 @@
     "jquery": "~2.1.1",
     "jquery-ui": "~1.11.2",
     "ui-autocomplete": "~0.5.6",
+    "underscore": "~1.7.0",
     "modernizr": "*",
     "requirejs": "*",
-    "bootstrap3-typeahead": "~3.0.0"
+    "bootstrap3-typeahead": "~3.0.0",
+    "oclazyload": "~0.3.9"
   }
 }
 
