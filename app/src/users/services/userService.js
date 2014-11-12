@@ -1,0 +1,15 @@
+define(['users/module'],function(usersModule){
+	usersModule.service('UserService', ['$resource','Users',function($resource,usersRepo){
+		return {
+			getUsers: function(){
+				return usersRepo.query();
+			},
+			getUser: function(username){
+				return usersRepo.get({username: username});
+			},
+			save: function(email){
+				usersRepo.save(email);
+			}
+		}
+	}]);
+});

@@ -1,0 +1,112 @@
+<div class="topdata">
+	
+</div>
+<div class="email-main">
+	<div class="list-group col-md-2 email-navbar">
+		<a ng-href="#/email/compose" class="list-group-item">Compose</a>
+		<a ng-href="#/email/inbox" class="list-group-item">Check</a>
+		<a class="list-group-item">Contacts</a>
+		<a class="divider"></a>
+		<a href="#/email/inbox" class="list-group-item active">
+			Inbox
+		</a>
+		<a href="#" class="list-group-item">Starred</a>
+		<a href="#" class="list-group-item">Group Mail</a>
+		<a href="#" class="list-group-item">Draft(4)</a>
+		<a href="#" class="list-group-item">Sent</a>
+		<a href="#" class="list-group-item">Trash</a>
+		<a href="#" class="list-group-item">Spam</a>
+		<a href="#" class="list-group-item">Subscription</a>
+	</div>
+	<div class="col-md-10">
+		<div ng-switch on="viewName">
+			<table class="table table-hover" ng-switch-when="inbox">
+				<thead>
+					<tr>
+						<th width="5%">
+							<input type="checkbox" />
+						</th>
+						<th width="5%">
+							<span class="glyphicon glyphicon-envelope"></span>
+							<span class="glyphicon glyphicon-paperclip"></span>
+						</th>
+						<th width="10%">
+							From
+						</th>
+						<th width="65%">
+							Subject
+						</th>
+						<th width="15%">
+							Time
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="email in emails" ng-click="showEmailDetails(email)">
+						<td>
+							<input type="checkbox" />
+						</td>
+						<td>
+							<span class="glyphicon glyphicon-envelope"></span>
+						</td>
+						<td>
+							{{email.sender.username}}
+						</td>
+						<td>
+							{{email.subject}}
+						</td>
+						<td>
+							{{email.sendTime | date}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="email-compose" ng-switch-when="compose">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a ng-href="" ng-click="swithComposeTab('mail')" role="tab" data-toggle="tab">Mail</a></li>
+					<li role="presentation"><a ng-href="" ng-click="swithComposeTab('groupMail')" role="tab" data-toggle="tab">Group Mail</a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div ng-show="composeTabActive==='mail'" role="tabpanel" class="active" id="mail">
+						<div class="email-operations">
+							<button class="btn btn-success btn-sm" ng-click="sendComposeForm()">Send</button>
+							<button class="btn btn-primary btn-sm">Send later</button>
+							<button class="btn btn-info btn-sm">Save</button>
+							<button class="btn btn-danger btn-sm" ng-click="closeComposeView()">Close</button>
+						</div>
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label for="to" class="col-sm-1 control-label">To</label>
+								<div class="col-sm-10">
+									<input type="text" ng-model="sendTo" class="form-control" id="to" placeholder="To" ui-autocomplete="recieversAutocompleteConfig" ng-keydown="disableBlur($event)"  />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="subject" class="col-sm-1 control-label">Subject</label>
+								<div class="col-sm-10">
+									<input ng-model="composeForm.subject" type="text" class="form-control" id="subject" placeholder="Subject">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="content" class="col-sm-1 control-label">Content</label>
+								<div class="col-sm-10">
+									<textarea ng-model="composeForm.content" class="form-control" id="content" placeholder="Content" style="height: 319px"></textarea>
+								</div>
+							</div>
+						</form>
+						<div class="email-operations">
+							<button class="btn btn-success btn-sm">Send</button>
+							<button class="btn btn-primary btn-sm">Send later</button>
+							<button class="btn btn-info btn-sm">Save</button>
+							<button class="btn btn-danger btn-sm">Close</button>
+						</div>
+					</div>
+					<div ng-show="composeTabActive==='groupMail'" role="tabpanel" id="groupMail">groupMail</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

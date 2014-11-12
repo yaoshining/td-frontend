@@ -1,0 +1,38 @@
+.topdata {
+	background:  -webkit-gradient(linear,0 0,0 100%,from(#364d68),to(#2c3f55));
+	height: 66px;
+}
+.email-main {
+	position: absolute;
+	width: 100%;
+	top: 66px;
+	bottom: 0;
+	padding: 0;
+}
+.email-navbar {
+	height: 100%;
+	background-color: #e8ebef;
+	padding-right: 0 !important;
+	margin-bottom: 0!important;
+	a.list-group-item {
+		background-color: transparent;
+		color: #354b66;
+		&.active,&:hover,&:focus {
+			background-color: #428bca;
+		}
+	}
+	.divider {
+		height: 1px;
+		margin: 3px 0;
+		overflow: hidden;
+		background-color: #a5a5a5;
+		width: 100%;
+		display: inline-block;
+	}
+}
+.email-operations {
+	margin: 10px;
+}
+.email-compose {
+	padding: 10px;
+}
