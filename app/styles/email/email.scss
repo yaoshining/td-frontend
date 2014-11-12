@@ -36,3 +36,32 @@
 .email-compose {
 	padding: 10px;
 }
+.read-email-info {
+  height: 98px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #9fa8b3;
+  border-left: none;
+  border-right: none;
+  background: #f4f6f8;
+}
+.read-email-tools {
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#cdd1d9),to(#bcc2cd));
+  background-color: #bcc2cd;
+  padding: 7px;
+}
+.email-info-item {
+  padding: 2px 8px 2px 14px;
+}
+.addrtitle {
+  width: 43px;
+  text-align: right;
+  font-size: 13px;
+  color: #A8ADB8;
+  display: inline-block;
+}
+.addrtitle:after {
+  content: ":";
+}
+.sub_title {
+  font: bold 14px "lucida Grande",Verdana;
+}

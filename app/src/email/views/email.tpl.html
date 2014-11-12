@@ -3,11 +3,11 @@
 </div>
 <div class="email-main">
 	<div class="list-group col-md-2 email-navbar">
-		<a ng-href="#/email/compose" class="list-group-item">Compose</a>
-		<a ng-href="#/email/inbox" class="list-group-item">Check</a>
+		<a ng-href="#/emails/compose/" class="list-group-item">Compose</a>
+		<a ng-href="#/emails/inbox/" class="list-group-item">Check</a>
 		<a class="list-group-item">Contacts</a>
 		<a class="divider"></a>
-		<a href="#/email/inbox" class="list-group-item active">
+		<a href="#/emails/inbox/" class="list-group-item active">
 			Inbox
 		</a>
 		<a href="#" class="list-group-item">Starred</a>
@@ -18,7 +18,7 @@
 		<a href="#" class="list-group-item">Spam</a>
 		<a href="#" class="list-group-item">Subscription</a>
 	</div>
-	<div class="col-md-10">
+	<div class="col-md-10" style="padding: 5px 10px 0 10px">
 		<div ng-switch on="viewName">
 			<table class="table table-hover" ng-switch-when="inbox">
 				<thead>
@@ -75,7 +75,7 @@
 							<button class="btn btn-success btn-sm" ng-click="sendComposeForm()">Send</button>
 							<button class="btn btn-primary btn-sm">Send later</button>
 							<button class="btn btn-info btn-sm">Save</button>
-							<button class="btn btn-danger btn-sm" ng-click="closeComposeView()">Close</button>
+							<button class="btn btn-danger btn-sm" ng-click="back()">Close</button>
 						</div>
 						<form class="form-horizontal" role="form">
 							<div class="form-group">
@@ -93,7 +93,7 @@
 							<div class="form-group">
 								<label for="content" class="col-sm-1 control-label">Content</label>
 								<div class="col-sm-10">
-									<textarea ng-model="composeForm.content" class="form-control" id="content" placeholder="Content" style="height: 319px"></textarea>
+									<textarea ui-tinymce ng-model="composeForm.content" class="form-control" id="content" placeholder="Content" style="height: 319px"></textarea>
 								</div>
 							</div>
 						</form>
@@ -107,6 +107,98 @@
 					<div ng-show="composeTabActive==='groupMail'" role="tabpanel" id="groupMail">groupMail</div>
 				</div>
 			</div>
+            <div ng-switch-when="details">
+                <div class="read-email-tools">
+                    <button class="btn btn-xs btn-default" ng-click="back()"><< Back</button>
+                    <button class="btn btn-xs btn-default">Reply</button>
+                    <button class="btn btn-xs btn-default">Forward</button>
+                    <button class="btn btn-xs btn-default">Delete</button>
+                    <button class="btn btn-xs btn-default">Reject</button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+                            Mark as... <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Read</a></li>
+                            <li><a href="#">Unread</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Starred Messages</a></li>
+                            <li><a href="#">Remove Star</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Remove Label</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">New Label</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+                            Move To... <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Inbox</a></li>
+                            <li><a href="#">Sent</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">New Folder...</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="read-email-info">
+                    <div class="email-info-item" style="height: 24px;line-height: 24px;">
+                        <span id="subject" class="sub_title">{{email.subject}}</span>
+                    </div>
+                    <div class="email-info-item">
+                        <span class="addrtitle">From</span>
+                        <span>{{email.sender.username}}</span>
+                    </div>
+                    <div class="email-info-item">
+                        <span class="addrtitle">Date</span>
+                        <span>{{email.sendTime | date}}</span>
+                    </div>
+                    <div class="email-info-item">
+                        <span class="addrtitle">To</span>
+                        <span>
+                            <span ng-repeat="receiver in email.receivers">{{receiver.username}};</span>
+                        </span>
+                    </div>
+                </div>
+                <div style="padding: 15px 15px 10px 15px">
+                    {{email.content}}
+                </div>
+                <div class="read-email-tools">
+                    <button class="btn btn-xs btn-default" ng-click="back()"><< Back</button>
+                    <button class="btn btn-xs btn-default">Reply</button>
+                    <button class="btn btn-xs btn-default">Forward</button>
+                    <button class="btn btn-xs btn-default">Delete</button>
+                    <button class="btn btn-xs btn-default">Reject</button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+                            Mark as... <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Read</a></li>
+                            <li><a href="#">Unread</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Starred Messages</a></li>
+                            <li><a href="#">Remove Star</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Remove Label</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">New Label</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+                            Move To... <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Inbox</a></li>
+                            <li><a href="#">Sent</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">New Folder...</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</div>
 </div>

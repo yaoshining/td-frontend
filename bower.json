@@ -17,7 +17,8 @@
     "modernizr": "*",
     "requirejs": "*",
     "bootstrap3-typeahead": "~3.0.0",
-    "oclazyload": "~0.3.9"
+    "oclazyload": "~0.3.9",
+    "angular-ui-tinymce": "latest"
   }
 }
 

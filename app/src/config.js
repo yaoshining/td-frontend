@@ -10,6 +10,7 @@ requirejs.config({
         'angular-animate': '../bower_components/angular-animate/angular-animate',
         /*require angular for better handling and binding controller*/
         'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router',
+        'angular-ui-tinymce': '../bower_components/angular-ui-tinymce/src/tinymce',
         /*require ui-bootstrap with the embeded template [http://angular-ui.github.io/bootstrap/]*/
         'ui-bootstrap-tpls': '../bower_components/angular-bootstrap/ui-bootstrap-tpls',
         /*require jquery*/
@@ -21,7 +22,8 @@ requirejs.config({
         'bootstrap-typeahead': '../bower_components/bootstrap3-typeahead/bootstrap3-typeahead',
         /*--insert code tag--do not remove*/
         'underscore': '../bower_components/underscore/underscore',
-        'oclazyload': '../bower_components/oclazyload/dist/ocLazyLoad'
+        'oclazyload': '../bower_components/oclazyload/dist/ocLazyLoad',
+        'tinymce': '../bower_components/tinymce/tinymce.min'
     },
     shim: {
         'angular': { exports: 'angular', deps: ['jquery','underscore'] },
@@ -29,6 +31,7 @@ requirejs.config({
         'angular-resource': ['angular'],
         'angular-animate': ['angular'],
         'angular-ui-router': ['angular'],
+        'angular-ui-tinymce': ['angular','tinymce'],
         'oclazyload': ['angular'],
         'ui-bootstrap-tpls': ['angular'],
         'bootstrap': ['jquery'],

@@ -2,6 +2,7 @@ define([
 	'angular',
 	'angular-resource',
 	'angular-ui-router',
+    'angular-ui-tinymce',
 	'ui-autocomplete',
 	'oclazyload'
 ],function(angular){
@@ -11,14 +12,14 @@ define([
 	*
 	* Description
 	*/
-	var emailModule = angular.module('emailModule', ['ui.router','ngResource','oc.lazyLoad','ui.autocomplete']).config(['$stateProvider','$ocLazyLoadProvider','$provide',function($stateProvider,$ocLazyLoadProvider,$provide) {
+	var emailModule = angular.module('emailModule', ['ui.router','ngResource','oc.lazyLoad','ui.autocomplete','ui.tinymce']).config(['$stateProvider','$ocLazyLoadProvider','$provide',function($stateProvider,$ocLazyLoadProvider,$provide) {
 		$ocLazyLoadProvider.config({
 			loadedModules: ['emailModule'],
 			jsLoader: require,
 			debug: true
 		});
-		$stateProvider.state('email',{
-			url: '/email/:emailView',
+		$stateProvider.state('emails',{
+			url: '/emails/:emailView/:emailId',
 			views: {
 				'': {
 					controller: 'EmailController',

@@ -8,9 +8,12 @@ define(['angular','email/module'],function(angular,emailModule){
 		'$state',
 		'$window',
 		function($scope,$location,$compile,emailService,userService,$state,$window){
-			$scope.moduleName = "emailModule";
 			$scope.emails = emailService.getEmails('shining');
 			$scope.viewName = $state.params.emailView;
+            if($state.params.emailId){
+                var emailId = $state.params.emailId;
+                $scope.email = emailService.getEmail(emailId);
+            }
 			$scope.composeTabActive = "mail";
 			$scope.composeForm = {};
 			$scope.sendTo = "";
@@ -23,10 +26,10 @@ define(['angular','email/module'],function(angular,emailModule){
 						return item;
 					}
 				});
-				$scope.composeForm.recieverUserNames = usernames;
+				$scope.composeForm.receiverUserNames = usernames;
 				emailService.save($scope.composeForm);
 			}
-			$scope.closeComposeView = function(){
+			$scope.back = function(){
 				$window.history.back();
 			}
 			$scope.disableBlur = function($event){
@@ -38,7 +41,7 @@ define(['angular','email/module'],function(angular,emailModule){
 				})
 			}
 			$scope.showEmailDetails = function(email){
-
+                $location.path("emails/details/"+email.id);
 			}
 			// var availableTags = [
 			// 	"ActionScript",
