@@ -7,8 +7,12 @@ define(['email/module'],function(emailModule){
 			getEmail: function(id){
 				return emailRepo.get({emailId: id});
 			},
-			save: function(email){
-				emailRepo.save(email);
+			save: function(email,callback){
+				emailRepo.save(email,function(){
+                    if($.isFunction(callback)){
+                        callback();
+                    }
+                });
 			}
 		}
 	}]);

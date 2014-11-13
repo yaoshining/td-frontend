@@ -1,0 +1,90 @@
+<div class="email-toolbar">
+    <button class="btn btn-xs btn-default" ng-click="back()"><< Back</button>
+    <button class="btn btn-xs btn-default">Reply</button>
+    <button class="btn btn-xs btn-default">Forward</button>
+    <button class="btn btn-xs btn-default">Delete</button>
+    <button class="btn btn-xs btn-default">Reject</button>
+    <div class="btn-group">
+        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+            Mark as... <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Read</a></li>
+            <li><a href="#">Unread</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Starred Messages</a></li>
+            <li><a href="#">Remove Star</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Remove Label</a></li>
+            <li class="divider"></li>
+            <li><a href="#">New Label</a></li>
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+            Move To... <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">Sent</a></li>
+            <li class="divider"></li>
+            <li><a href="#">New Folder...</a></li>
+        </ul>
+    </div>
+</div>
+<div class="read-email-info">
+    <div class="email-info-item" style="height: 24px;line-height: 24px;">
+        <span id="subject" class="sub_title">{{email.subject}}</span>
+    </div>
+    <div class="email-info-item">
+        <span class="addrtitle">From</span>
+        <span>{{email.sender.username}}</span>
+    </div>
+    <div class="email-info-item">
+        <span class="addrtitle">Date</span>
+        <span>{{email.sendTime | date}}</span>
+    </div>
+    <div class="email-info-item">
+        <span class="addrtitle">To</span>
+                        <span>
+                            <span ng-repeat="receiver in email.receivers">{{receiver.username}};</span>
+                        </span>
+    </div>
+</div>
+<div style="padding: 15px 15px 10px 15px">
+    {{email.content}}
+</div>
+<div class="email-toolbar">
+    <button class="btn btn-xs btn-default" ng-click="back()"><< Back</button>
+    <button class="btn btn-xs btn-default">Reply</button>
+    <button class="btn btn-xs btn-default">Forward</button>
+    <button class="btn btn-xs btn-default">Delete</button>
+    <button class="btn btn-xs btn-default">Reject</button>
+    <div class="btn-group">
+        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+            Mark as... <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Read</a></li>
+            <li><a href="#">Unread</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Starred Messages</a></li>
+            <li><a href="#">Remove Star</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Remove Label</a></li>
+            <li class="divider"></li>
+            <li><a href="#">New Label</a></li>
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+            Move To... <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">Sent</a></li>
+            <li class="divider"></li>
+            <li><a href="#">New Folder...</a></li>
+        </ul>
+    </div>
+</div>

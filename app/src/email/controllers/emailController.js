@@ -27,7 +27,9 @@ define(['angular','email/module'],function(angular,emailModule){
 					}
 				});
 				$scope.composeForm.receiverUserNames = usernames;
-				emailService.save($scope.composeForm);
+				emailService.save($scope.composeForm,function(){
+                    $location.path("emails/inbox/");
+                });
 			}
 			$scope.back = function(){
 				$window.history.back();
