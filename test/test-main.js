@@ -27,6 +27,8 @@ requirejs.config({
         /*require angular for better handling and binding controller*/
         'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router',
         'angular-ui-tinymce': '../bower_components/angular-ui-tinymce/src/tinymce',
+        'ng-file-upload-shim': '../bower_components/ng-file-upload-shim/angular-file-upload-shim',
+        'ng-file-upload': '../bower_components/ng-file-upload/angular-file-upload',
         /*require ui-bootstrap with the embeded template [http://angular-ui.github.io/bootstrap/]*/
         'ui-bootstrap-tpls': '../bower_components/angular-bootstrap/ui-bootstrap-tpls',
         /*require jquery*/
@@ -42,7 +44,7 @@ requirejs.config({
         'tinymce': '../bower_components/tinymce/tinymce.min'
     },
     shim: {
-        'angular': { exports: 'angular', deps: ['jquery','underscore'] },
+        'angular': { exports: 'angular', deps: ['jquery','underscore','ng-file-upload-shim'] },
         'angular-mocks': ['angular'],
         'angular-resource': ['angular'],
         'angular-animate': ['angular'],
@@ -53,7 +55,8 @@ requirejs.config({
         'bootstrap': ['jquery'],
         'bootstrap-typeahead': ['bootstrap'],
         'jquery-ui': ['jquery'],
-        'ui-autocomplete': ['jquery-ui','angular']
+        'ui-autocomplete': ['jquery-ui','angular'],
+        'ng-file-upload': ['angular']
     },
 
     // ask Require.js to load these files (all our tests)

@@ -1,5 +1,5 @@
 define(['users/module'],function(usersModule){
-	usersModule.service('UserService', ['$resource','Users',function($resource,usersRepo){
+	usersModule.service('UserService', ['Users',function(usersRepo){
 		return {
 			getUsers: function(){
 				return usersRepo.query();
