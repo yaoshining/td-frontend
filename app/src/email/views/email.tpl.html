@@ -18,7 +18,7 @@
 		<a href="#" class="list-group-item">Spam</a>
 		<a href="#" class="list-group-item">Subscription</a>
 	</div>
-	<div class="col-md-10" style="padding: 5px 10px 0 10px">
+	<div class="col-md-10" style="padding: 5px 10px 0 10px;overflow-x: hidden;overflow-y: auto;height: 100%">
 		<div ng-switch on="viewName">
             <div ng-switch-when="inbox">
                 <div ng-include="'/src/email/views/inbox.tpl.html'"></div>

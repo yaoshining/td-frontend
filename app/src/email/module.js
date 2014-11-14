@@ -3,6 +3,7 @@ define([
 	'angular-resource',
 	'angular-ui-router',
     'angular-ui-tinymce',
+    'ng-file-upload',
 	'ui-autocomplete',
 	'oclazyload'
 ],function(angular){
@@ -12,7 +13,7 @@ define([
 	*
 	* Description
 	*/
-	var emailModule = angular.module('emailModule', ['ui.router','ngResource','oc.lazyLoad','ui.autocomplete','ui.tinymce']).config(['$stateProvider','$ocLazyLoadProvider','$provide',function($stateProvider,$ocLazyLoadProvider,$provide) {
+	var emailModule = angular.module('emailModule', ['ui.router','ngResource','oc.lazyLoad','ui.autocomplete','ui.tinymce','angularFileUpload']).config(['$stateProvider','$ocLazyLoadProvider','$provide',function($stateProvider,$ocLazyLoadProvider,$provide) {
 		$ocLazyLoadProvider.config({
 			loadedModules: ['emailModule'],
 			jsLoader: require,

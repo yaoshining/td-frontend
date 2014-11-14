@@ -18,7 +18,9 @@
     "requirejs": "*",
     "bootstrap3-typeahead": "~3.0.0",
     "oclazyload": "~0.3.9",
-    "angular-ui-tinymce": "latest"
+    "angular-ui-tinymce": "latest",
+    "ng-file-upload-shim": "*",
+    "ng-file-upload": "*"
   }
 }
 

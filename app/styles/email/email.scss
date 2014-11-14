@@ -8,6 +8,7 @@
 	top: 66px;
 	bottom: 0;
 	padding: 0;
+    overflow: hidden;
 }
 .email-navbar {
 	height: 100%;
@@ -64,4 +65,16 @@
 }
 .sub_title {
   font: bold 14px "lucida Grande",Verdana;
+}
+.email-attachment-list {
+  list-style: none;
+  padding: 0;
+  .email-attach.alert {
+    padding: 5px;
+    margin-bottom: 2px;
+  }
+  .progress {
+    height: 2px;
+    margin-bottom: 2px;
+  }
 }
