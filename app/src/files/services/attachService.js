@@ -44,8 +44,16 @@ define(['files/module'],function(filesModule){
             getAll: function(){
                 return attachRepo.query();
             },
-            getAttachments: function(){
-                return attachRepo.fetch();
+            getAttachment: function(id){
+                return attachRepo.get({id: id});
+            },
+            download: function(attachId){
+                $http({
+                    url: '/oa/services/attachments/download/'+attachId,
+                    headers: {
+                        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+                    }
+                });
             }
         }
     }]);

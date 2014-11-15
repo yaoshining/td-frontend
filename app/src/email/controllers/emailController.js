@@ -29,7 +29,12 @@ define(['angular','email/module'],function(angular,emailModule){
             if($state.params.emailId){
                 var emailId = $state.params.emailId;
                 $scope.email = emailService.getEmail(emailId);
-                $scope.attachments = attachService.getAttachments();
+                $scope.attachments = [];
+                $scope.email.$promise.then(function(){
+                    $.each($scope.email.attachments,function(i,e){
+                        $scope.attachments.push(attachService.getAttachment(e));
+                    });
+                });
             }
 			$scope.composeTabActive = "mail";
 			$scope.composeForm = {
@@ -65,6 +70,9 @@ define(['angular','email/module'],function(angular,emailModule){
 			$scope.showEmailDetails = function(email){
                 $location.path("emails/details/"+email.id);
 			}
+            $scope.downloadAttach = function(attachId){
+                attachService.download(attachId);
+            }
 			// var availableTags = [
 			// 	"ActionScript",
 			// 	"AppleScript",

@@ -54,7 +54,13 @@
 <div style="padding: 15px 15px 10px 15px">
     {{email.content}}
 </div>
-{{attachments}}
+<div>
+    <ul>
+        <li ng-repeat="attach in attachments">
+            <a ng-href="/oa/attachments/download/{{attach.id}}">{{attach.fileName}}</a>
+        </li>
+    </ul>
+</div>
 <div class="email-toolbar">
     <button class="btn btn-xs btn-default" ng-click="back()"><< Back</button>
     <button class="btn btn-xs btn-default">Reply</button>
