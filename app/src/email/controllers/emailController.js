@@ -40,6 +40,7 @@ define(['angular','email/module'],function(angular,emailModule){
 			$scope.composeForm = {
                 attachments: []
             };
+            $scope.dropSupported = false;
 			$scope.sendTo = "";
 			$scope.swithComposeTab = function(tabName){
 				$scope.composeTabActive = tabName;

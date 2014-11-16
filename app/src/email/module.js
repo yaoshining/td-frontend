@@ -6,7 +6,8 @@ define([
     'ng-file-upload',
 	'ui-autocomplete',
 	'oclazyload',
-    'files/module'
+    'files/module',
+    'angular-animate'
 ],function(angular){
 	'use strict'
 	 /**
@@ -21,7 +22,8 @@ define([
          'ui.autocomplete',
          'ui.tinymce',
          'angularFileUpload',
-         'filesModule'
+         'filesModule',
+         'ngAnimate'
      ]).config([
             '$stateProvider',
             '$ocLazyLoadProvider',

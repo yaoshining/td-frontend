@@ -30,7 +30,17 @@
                 <label for="content" class="col-sm-1 control-label">Content</label>
                 <div class="col-sm-10">
                     <div>
-                        <label for="attach">Attach files</label>
+                        <div style="position: relative">
+                            <label for="attach">Attach files</label><span class="caret" data-toggle="dropdown"></span>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a ng-href="" ng-click="dropSupported = true">Drap and drop to upload</a></li>
+                                <li><a href="#">Select from favorate</a></li>
+                            </ul>
+                            <div ng-show="dropSupported===true" ng-file-drop="onFileSelect($files);dropSupported = false" style="position: absolute;top: 100%;padding: 3px;height: 150px;line-height: 150px;text-align: center;width: 100%;background-color: #FFF;border: 1px solid #000">
+                                Drag and drop files to this area.
+                                <a ng-href="" ng-click="dropSupported = false" style="position: absolute;right: 0;top: 0;line-height: normal">Close</a>
+                            </div>
+                        </div>
                         <ul class="email-attachment-list" ng-show="selectedFiles && selectedFiles.length > 0">
                             <li ng-repeat="file in selectedFiles" class="alert email-attach" ng-class="{'alert-info': !file.finished,'alert-success': file.finished}">
                                 <span>{{file.name}}</span>

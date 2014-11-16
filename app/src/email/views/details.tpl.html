@@ -46,18 +46,27 @@
     </div>
     <div class="email-info-item">
         <span class="addrtitle">To</span>
-                        <span>
-                            <span ng-repeat="receiver in email.receivers">{{receiver.username}};</span>
-                        </span>
+        <span>
+            <span ng-repeat="receiver in email.receivers">{{receiver.username}};</span>
+        </span>
+    </div>
+    <div class="email-info-item" ng-show="attachments.length>0">
+        <span class="addrtitle">Files</span>
+        <span>
+            {{attachments.length}} Attachment{{attachments.length>1?'s':''}}(<a ng-href="/oa/resources/attachments/download/{{attach.id}}" ng-repeat="attach in attachments">{{attach.fileName}};</a>)
+        </span>
     </div>
 </div>
 <div style="padding: 15px 15px 10px 15px">
     {{email.content}}
 </div>
-<div>
-    <ul>
+<div style="padding: 2px;background-color: #e6eaf0;margin-bottom: 2px;" ng-show="attachments.length>0">
+    <div style="padding:6px 10px 10px 8px;">
+        <div style="height: 14px">Files({{attachments.length}})</div>
+    </div>
+    <ul style="background-color: #FFF;list-style: none;margin-bottom: 0">
         <li ng-repeat="attach in attachments">
-            <a ng-href="/oa/attachments/download/{{attach.id}}">{{attach.fileName}}</a>
+            <a ng-href="/oa/resources/attachments/download/{{attach.id}}">{{attach.fileName}}</a>
         </li>
     </ul>
 </div>
