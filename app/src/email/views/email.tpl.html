@@ -3,11 +3,11 @@
 </div>
 <div class="email-main">
 	<div class="list-group col-md-2 email-navbar">
-		<a ng-href="#/emails/compose/" class="list-group-item">Compose</a>
+		<a ng-href="#/emails/compose/" class="list-group-item" ng-class="{'active': viewName==='compose'}">Compose</a>
 		<a ng-href="#/emails/inbox/" class="list-group-item">Check</a>
 		<a class="list-group-item">Contacts</a>
 		<a class="divider"></a>
-		<a href="#/emails/inbox/" class="list-group-item active">
+		<a href="#/emails/inbox/" class="list-group-item" ng-class="{'active': viewName==='inbox'}">
 			Inbox
 		</a>
 		<a href="#" class="list-group-item">Starred</a>

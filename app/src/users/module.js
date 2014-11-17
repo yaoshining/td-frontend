@@ -1,6 +1,7 @@
 define([
 	'angular',
 	'angular-resource',
+    'angular-ui-router',
 	'oclazyload'
 ],function(angular){
 	'use strict'
@@ -9,29 +10,29 @@ define([
 	*
 	* Description
 	*/
-	var usersModule = angular.module('usersModule', ['ngResource','oc.lazyLoad']).config(['$ocLazyLoadProvider','$provide',function($ocLazyLoadProvider,$provide) {
+	var usersModule = angular.module('usersModule', ['ngResource','oc.lazyLoad','ui.router']).config(['$ocLazyLoadProvider','$provide','$stateProvider',function($ocLazyLoadProvider,$provide,$stateProvider) {
 		$ocLazyLoadProvider.config({
 			loadedModules: ['usersModule'],
 			jsLoader: require,
 			debug: true
 		});
 		/* add safeApply function for $rootScope - called by $scope.$root.safeApply(fn) */
-	            $provide.decorator('$rootScope', [
-	                '$delegate',
-	                function($delegate) {
-	                    $delegate.safeApply = function(fn) {
-	                        var phase = $delegate.$$phase;
-	                        if (phase === '$apply' || phase === '$digest') {
-	                            if (fn && typeof fn === 'function') {
-	                                fn();
-	                            }
-	                        } else {
-	                            $delegate.$apply(fn);
-	                        }
-	                    };
-	                    return $delegate;
-	                }
-	            ]);
+        $provide.decorator('$rootScope', [
+            '$delegate',
+            function($delegate) {
+                $delegate.safeApply = function(fn) {
+                    var phase = $delegate.$$phase;
+                    if (phase === '$apply' || phase === '$digest') {
+                        if (fn && typeof fn === 'function') {
+                            fn();
+                        }
+                    } else {
+                        $delegate.$apply(fn);
+                    }
+                };
+                return $delegate;
+            }
+        ]);
 	}]).run(['$http','$ocLazyLoad', function($http,$ocLazyLoad){
 		$ocLazyLoad.load({
 			name: 'usersModule',

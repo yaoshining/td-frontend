@@ -42,6 +42,7 @@ define(['angular','email/module'],function(angular,emailModule){
             };
             $scope.dropSupported = false;
 			$scope.sendTo = "";
+            $scope.selectedFiles = [];
 			$scope.swithComposeTab = function(tabName){
 				$scope.composeTabActive = tabName;
 			}
@@ -140,7 +141,7 @@ define(['angular','email/module'],function(angular,emailModule){
 			};
             $scope.onFileSelect = function($files) {
                 $log.debug($files.length+' files were selected.');
-                $scope.selectedFiles = $files;
+                $scope.selectedFiles = $scope.selectedFiles.concat($files);
                 //$files: an array of files selected, each file has name, size, and type.
                 for (var i = 0; i < $files.length; i++) {
                     var file = $files[i];

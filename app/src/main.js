@@ -10,7 +10,8 @@ require([
     'oclazyload',
     'ui-bootstrap-tpls',
     'bootstrap',
-    'home/home'
+    'home/home',
+    'users/module'
 ], function(angular) {
     'use strict';
 
@@ -24,10 +25,20 @@ require([
             'oc.lazyLoad',
             'ui.bootstrap',
             'ngAnimate',
-            'homeModule'
-        ]).config(['$urlRouterProvider', '$provide', '$ocLazyLoadProvider',function($urlRouterProvider, $provide,$ocLazyLoadProvider) {
+            'homeModule',
+            'usersModule'
+        ]).config([
+            '$urlRouterProvider',
+            '$provide',
+            '$ocLazyLoadProvider',
+            '$httpProvider',
+        function(
+            $urlRouterProvider,
+            $provide,
+            $ocLazyLoadProvider,
+            $httpProvider
+        ) {
             $urlRouterProvider.otherwise('/');
-
             /* change configure to use [[ to be the interpolation ([[2 + 2]]) */
             //$interpolateProvider.startSymbol('[[');
             //$interpolateProvider.endSymbol(']]');

@@ -1,5 +1,5 @@
 define(['users/module'],function(usersModule){
-	usersModule.service('UserService', ['Users',function(usersRepo){
+	usersModule.service('UserService', ['Users','$http',function(usersRepo,$http){
 		return {
 			getUsers: function(){
 				return usersRepo.query();
@@ -9,7 +9,10 @@ define(['users/module'],function(usersModule){
 			},
 			save: function(email){
 				usersRepo.save(email);
-			}
+			},
+            getCurrentUser: function(){
+                return $http.get('/oa/users/current');
+            }
 		}
 	}]);
 });
