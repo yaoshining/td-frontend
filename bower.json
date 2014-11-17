@@ -10,6 +10,7 @@
     "angular-ui-router": "~0.2.10",
     "angular-bootstrap": "*",
     "angular-animate": "*",
+    "angular-sanitize": "*",
     "jquery": "~2.1.1",
     "jquery-ui": "~1.11.2",
     "ui-autocomplete": "~0.5.6",
@@ -20,7 +21,8 @@
     "oclazyload": "~0.3.9",
     "angular-ui-tinymce": "latest",
     "ng-file-upload-shim": "*",
-    "ng-file-upload": "*"
+    "ng-file-upload": "*",
+    "tinymce": "~4.1.6"
   }
 }
 

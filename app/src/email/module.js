@@ -3,6 +3,7 @@ define([
 	'angular-resource',
 	'angular-ui-router',
     'angular-ui-tinymce',
+    'angular-sanitize',
     'ng-file-upload',
 	'ui-autocomplete',
 	'oclazyload',
@@ -21,6 +22,7 @@ define([
          'oc.lazyLoad',
          'ui.autocomplete',
          'ui.tinymce',
+         'ngSanitize',
          'angularFileUpload',
          'filesModule',
          'ngAnimate'

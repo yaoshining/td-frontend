@@ -11,6 +11,7 @@ define(['angular','email/module'],function(angular,emailModule){
         '$timeout',
         '$log',
         'attachService',
+        '$sce',
 		function(
             $scope,
             $location,
@@ -22,7 +23,8 @@ define(['angular','email/module'],function(angular,emailModule){
             $upload,
             $timeout,
             $log,
-            attachService
+            attachService,
+            $sce
         ){
 			$scope.emails = emailService.getEmails('shining');
 			$scope.viewName = $state.params.emailView;
@@ -31,6 +33,7 @@ define(['angular','email/module'],function(angular,emailModule){
                 $scope.email = emailService.getEmail(emailId);
                 $scope.attachments = [];
                 $scope.email.$promise.then(function(){
+                    $scope.email.explicitlyTrustedContent = $sce.trustAsHtml($scope.email.content);
                     $.each($scope.email.attachments,function(i,e){
                         $scope.attachments.push(attachService.getAttachment(e));
                     });
@@ -43,6 +46,24 @@ define(['angular','email/module'],function(angular,emailModule){
             $scope.dropSupported = false;
 			$scope.sendTo = "";
             $scope.selectedFiles = [];
+            $scope.tinymceOptions = {
+//                language: 'zh_CN'
+                theme: 'modern',
+                plugins: [
+                    "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen",
+                    "insertdatetime media nonbreaking save table contextmenu directionality",
+                    "emoticons template paste textcolor colorpicker textpattern"
+                ],
+                toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+                toolbar2: "print preview media | forecolor backcolor emoticons",
+                image_advtab: true,
+                templates: [
+                    {title: 'Test template 1', content: '<b>Test 1</b>'},
+                    {title: 'Test template 2', content: '<em>Test 2</em>'}
+                ],
+                autosave_ask_before_unload: false
+            }
 			$scope.swithComposeTab = function(tabName){
 				$scope.composeTabActive = tabName;
 			}
@@ -75,30 +96,6 @@ define(['angular','email/module'],function(angular,emailModule){
             $scope.downloadAttach = function(attachId){
                 attachService.download(attachId);
             }
-			// var availableTags = [
-			// 	"ActionScript",
-			// 	"AppleScript",
-			// 	"Asp",
-			// 	"BASIC",
-			// 	"C",
-			// 	"C++",
-			// 	"Clojure",
-			// 	"COBOL",
-			// 	"ColdFusion",
-			// 	"Erlang",
-			// 	"Fortran",
-			// 	"Groovy",
-			// 	"Haskell",
-			// 	"Java",
-			// 	"JavaScript",
-			// 	"Lisp",
-			// 	"Perl",
-			// 	"PHP",
-			// 	"Python",
-			// 	"Ruby",
-			// 	"Scala",
-			// 	"Scheme"
-			// ];
 			var availableTags = userService.getUsers();
 			function extractLast( term ) {
 				return split( term ).pop();

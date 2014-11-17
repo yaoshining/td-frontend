@@ -53,7 +53,7 @@
                         </ul>
                         <input id="attach" type="file" ng-file-select="onFileSelect($files)" multiple accept="*" style="display: none;" />
                     </div>
-                    <textarea ui-tinymce ng-model="composeForm.content" class="form-control" id="content" placeholder="Content" style="height: 319px"></textarea>
+                    <textarea ui-tinymce="tinymceOptions" ng-model="composeForm.content" class="form-control" id="content" placeholder="Content" style="height: 319px"></textarea>
                 </div>
             </div>
         </form>
