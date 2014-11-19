@@ -11,7 +11,7 @@ require([
     'ui-bootstrap-tpls',
     'bootstrap',
     'home/home',
-    'users/module'
+    'auth/module'
 ], function(angular) {
     'use strict';
 
@@ -26,12 +26,13 @@ require([
             'ui.bootstrap',
             'ngAnimate',
             'homeModule',
-            'usersModule'
+            'authModule'
         ]).config([
             '$urlRouterProvider',
             '$provide',
             '$ocLazyLoadProvider',
             '$httpProvider',
+            'authServiceProvider',
         function(
             $urlRouterProvider,
             $provide,
@@ -65,7 +66,23 @@ require([
                 jsLoader: require,
                 debug: true
             });
-        }]).run(['$ocLazyLoad',function($ocLazyLoad){
+            // alternatively, register the interceptor via an anonymous factory
+            $httpProvider.interceptors.push(function(authService,$location) {
+                return {
+                    'request': function(config) {
+                        if(angular.isUndefined(authService.currentUser)){
+                            var loginPath = authService.loginPath;
+                            $location.path(loginPath);
+                        }
+                        return config;
+                    },
+
+                    'response': function(response) {
+                        return response;
+                    }
+                };
+            });
+        }]).run(['$ocLazyLoad', function($ocLazyLoad){
             $ocLazyLoad.load({
                 name: 'emailModule',
                 files: ['email/module']

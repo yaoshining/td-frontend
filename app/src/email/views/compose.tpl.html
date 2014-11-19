@@ -36,7 +36,7 @@
                                 <li><a ng-href="" ng-click="dropSupported = true">Drap and drop to upload</a></li>
                                 <li><a href="#">Select from favorate</a></li>
                             </ul>
-                            <div ng-show="dropSupported===true" ng-file-drop="onFileSelect($files);dropSupported = false" style="position: absolute;top: 100%;padding: 3px;height: 150px;line-height: 150px;text-align: center;width: 100%;background-color: #FFF;border: 1px solid #000">
+                            <div ng-show="dropSupported===true" ng-file-drop="onFileSelect($files);dropSupported = false" style="z-index: 999;position: absolute;top: 100%;padding: 3px;height: 150px;line-height: 150px;text-align: center;width: 100%;background-color: #FFF;border: 1px solid #000">
                                 Drag and drop files to this area.
                                 <a ng-href="" ng-click="dropSupported = false" style="position: absolute;right: 0;top: 0;line-height: normal">Close</a>
                             </div>
