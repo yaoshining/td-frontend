@@ -67,7 +67,7 @@ require([
                 debug: true
             });
             // alternatively, register the interceptor via an anonymous factory
-            $httpProvider.interceptors.push(function(authService,$location) {
+            $httpProvider.interceptors.push(['authService','$location',function(authService,$location) {
                 return {
                     'request': function(config) {
                         if(angular.isUndefined(authService.currentUser)){
@@ -81,7 +81,7 @@ require([
                         return response;
                     }
                 };
-            });
+            }]);
         }]).run(['$ocLazyLoad', function($ocLazyLoad){
             $ocLazyLoad.load({
                 name: 'emailModule',

@@ -43,6 +43,7 @@ define(['angular','angular-ui-router'],function(angular){
                             authService.currentUser = data.principal;
                         }
                         $location.path('/');
+                        $scope.$apply();
                     }
                 });
             }
