@@ -7,6 +7,7 @@ require([
     'angular-resource',
     'angular-animate',
     'angular-ui-router',
+    'angular-cookies',
     'oclazyload',
     'ui-bootstrap-tpls',
     'bootstrap',
@@ -26,7 +27,8 @@ require([
             'ui.bootstrap',
             'ngAnimate',
             'homeModule',
-            'authModule'
+            'authModule',
+            'ngCookies'
         ]).config([
             '$urlRouterProvider',
             '$provide',
@@ -43,7 +45,6 @@ require([
             /* change configure to use [[ to be the interpolation ([[2 + 2]]) */
             //$interpolateProvider.startSymbol('[[');
             //$interpolateProvider.endSymbol(']]');
-
             /* add safeApply function for $rootScope - called by $scope.$root.safeApply(fn) */
             $provide.decorator('$rootScope', [
                 '$delegate',
@@ -67,12 +68,17 @@ require([
                 debug: true
             });
             // alternatively, register the interceptor via an anonymous factory
-            $httpProvider.interceptors.push(['authService','$location',function(authService,$location) {
+            $httpProvider.interceptors.push(['authService','$location','$cookieStore',function(authService,$location,$cookieStore) {
                 return {
                     'request': function(config) {
+                        var savedCurrentUser = $cookieStore.get('currentUser');
                         if(angular.isUndefined(authService.currentUser)){
-                            var loginPath = authService.loginPath;
-                            $location.path(loginPath);
+                            if(angular.isUndefined(savedCurrentUser)){
+                                var loginPath = authService.loginPath;
+                                $location.path(loginPath);
+                            } else {
+                                authService.currentUser = savedCurrentUser;
+                            }
                         }
                         return config;
                     },

@@ -1,8 +1,9 @@
 /**
  * Created by 世宁 on 14-11-19.
  */
-define(['angular','angular-ui-router'],function(angular){
-    var authModule = angular.module('authModule',['ui.router']).config(['$provide','$stateProvider',function($provide,$stateProvider){
+'use strict'
+define(['angular','angular-ui-router','angular-cookies'],function(angular){
+    var authModule = angular.module('authModule',['ui.router','ngCookies']).config(['$provide','$stateProvider',function($provide,$stateProvider){
         $provide.provider({
             authService: function(){
                 this.$get = [function(){
@@ -23,7 +24,7 @@ define(['angular','angular-ui-router'],function(angular){
             }
         });
     }]).controller({
-        LoginController: ['$scope','authService','$location',function($scope,authService,$location){
+        LoginController: ['$scope','authService','$location','$cookieStore',function($scope,authService,$location,$cookieStore){
             $scope.login = function(){
                 var username = $scope.username;
                 var password = $scope.password;
@@ -42,6 +43,7 @@ define(['angular','angular-ui-router'],function(angular){
                         if(angular.isObject(data)){
                             authService.currentUser = data.principal;
                         }
+                        $cookieStore.put('currentUser',authService.currentUser);
                         $location.path('/');
                         $scope.$apply();
                     }

@@ -8,6 +8,7 @@ requirejs.config({
         'angular-resource': '../bower_components/angular-resource/angular-resource',
         /*require angular animate for easily handling animation. I recommend to use this with tweenmax (bower install --save greensock)*/
         'angular-animate': '../bower_components/angular-animate/angular-animate',
+        'angular-cookies': '../bower_components/angular-cookies/angular-cookies',
         /*require angular for better handling and binding controller*/
         'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router',
         'angular-ui-tinymce': '../bower_components/angular-ui-tinymce/src/tinymce',
@@ -33,6 +34,7 @@ requirejs.config({
         'angular-mocks': ['angular'],
         'angular-resource': ['angular'],
         'angular-animate': ['angular'],
+        'angular-cookies': ['angular'],
         'angular-ui-router': ['angular'],
         'angular-ui-tinymce': ['angular','tinymce'],
         'angular-sanitize': ['angular'],
