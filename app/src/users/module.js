@@ -4,13 +4,13 @@ define([
     'angular-ui-router',
 	'oclazyload'
 ],function(angular){
-	'use strict'
+	'use strict';
 	 /**
 	*  Module
 	*
 	* Description
 	*/
-	var usersModule = angular.module('usersModule', ['ngResource','oc.lazyLoad','ui.router']).config(['$ocLazyLoadProvider','$provide','$stateProvider',function($ocLazyLoadProvider,$provide,$stateProvider) {
+	var usersModule = angular.module('usersModule', ['ngResource','oc.lazyLoad','ui.router']).config(['$ocLazyLoadProvider','$provide',function($ocLazyLoadProvider,$provide) {
 		$ocLazyLoadProvider.config({
 			loadedModules: ['usersModule'],
 			jsLoader: require,

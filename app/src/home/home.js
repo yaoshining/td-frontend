@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 define(['angular', 'angular-ui-router'], function(angular) {
     angular.module('homeModule', ['ui.router']).config(['$stateProvider', function($stateProvider) {
         /*config path for home page*/
@@ -9,8 +9,7 @@ define(['angular', 'angular-ui-router'], function(angular) {
         });
     }]).controller('HomeController', [
         '$scope',
-        '$location',
-        function($scope, $location) {
+        function($scope) {
             /* initialize */
             $scope.pageTitle = 'dummy';
         }
