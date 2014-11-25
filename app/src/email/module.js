@@ -55,22 +55,22 @@ define([
 			}
 		});
 		/* add safeApply function for $rootScope - called by $scope.$root.safeApply(fn) */
-	            $provide.decorator('$rootScope', [
-	                '$delegate',
-	                function($delegate) {
-	                    $delegate.safeApply = function(fn) {
-	                        var phase = $delegate.$$phase;
-	                        if (phase === '$apply' || phase === '$digest') {
-	                            if (fn && typeof fn === 'function') {
-	                                fn();
-	                            }
-	                        } else {
-	                            $delegate.$apply(fn);
-	                        }
-	                    };
-	                    return $delegate;
-	                }
-	            ]);
+        $provide.decorator('$rootScope', [
+            '$delegate',
+            function($delegate) {
+                $delegate.safeApply = function(fn) {
+                    var phase = $delegate.$$phase;
+                    if (phase === '$apply' || phase === '$digest') {
+                        if (fn && typeof fn === 'function') {
+                            fn();
+                        }
+                    } else {
+                        $delegate.$apply(fn);
+                    }
+                };
+                return $delegate;
+            }
+        ]);
 	}]).run(['$http','$ocLazyLoad', function($http,$ocLazyLoad){
 		$ocLazyLoad.load({
 			name: 'usersModule',

@@ -34,12 +34,13 @@ require([
             '$provide',
             '$ocLazyLoadProvider',
             '$httpProvider',
-            'authServiceProvider',
+            '$stateProvider',
         function(
             $urlRouterProvider,
             $provide,
             $ocLazyLoadProvider,
-            $httpProvider
+            $httpProvider,
+            $stateProvider
         ) {
             $urlRouterProvider.otherwise('/');
             /* change configure to use [[ to be the interpolation ([[2 + 2]]) */

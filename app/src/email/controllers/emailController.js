@@ -1,4 +1,4 @@
-define(['angular','email/module'],function(angular,emailModule){
+define(['angular','email/module','users/module','auth/module'],function(angular,emailModule){
 	emailModule.controller('EmailController', [
 		'$scope',
 		'$location', 
@@ -12,6 +12,7 @@ define(['angular','email/module'],function(angular,emailModule){
         '$log',
         'attachService',
         '$sce',
+        'authService',
 		function(
             $scope,
             $location,
@@ -24,9 +25,10 @@ define(['angular','email/module'],function(angular,emailModule){
             $timeout,
             $log,
             attachService,
-            $sce
+            $sce,
+            authService
         ){
-			$scope.emails = emailService.getEmails('shining');
+			$scope.emails = emailService.getEmails(authService.currentUser);
 			$scope.viewName = $state.params.emailView;
             if($state.params.emailId){
                 var emailId = $state.params.emailId;
