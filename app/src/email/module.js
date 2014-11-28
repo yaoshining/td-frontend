@@ -10,7 +10,7 @@ define([
     'files/module',
     'angular-animate'
 ],function(angular){
-	'use strict'
+	'use strict';
 	 /**
 	*  Module
 	*

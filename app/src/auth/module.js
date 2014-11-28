@@ -1,7 +1,7 @@
 /**
  * Created by 世宁 on 14-11-19.
  */
-'use strict'
+'use strict';
 define(['angular','angular-ui-router','angular-cookies'],function(angular){
     var authModule = angular.module('authModule',['ui.router','ngCookies']).config(['$provide','$stateProvider',function($provide,$stateProvider){
         $provide.provider({
@@ -9,8 +9,11 @@ define(['angular','angular-ui-router','angular-cookies'],function(angular){
                 this.$get = [function(){
                     return {
                         currentUser: undefined,
-                        loginPath: 'auth/login'
-                    }
+                        loginPath: 'auth/login',
+                        logout: function(){
+                            this.currentUser = undefined;
+                        }
+                    };
                 }];
             }
         });
@@ -21,6 +24,19 @@ define(['angular','angular-ui-router','angular-cookies'],function(angular){
                     controller: 'LoginController',
                     templateUrl: 'src/auth/views/login.tpl.html'
                 }
+            }
+        }).state('logout',{
+            url: '/auth/logout',
+            resolve: {
+                logoutService: ['$location','$http','authService','$cookieStore',function($location,$http,authService,$cookieStore){
+                    $http.post('/oa/auth/logout').success(function(data,state){
+                        if(state === 200){
+                            authService.logout();
+                            $cookieStore.remove('currentUser');
+                            $location.path('/auth/login');
+                        }
+                    });
+            }]
             }
         });
     }]).controller({
@@ -48,7 +64,7 @@ define(['angular','angular-ui-router','angular-cookies'],function(angular){
                         $scope.$apply();
                     }
                 });
-            }
+            };
         }]
     });
     return authModule;

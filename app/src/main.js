@@ -34,13 +34,11 @@ require([
             '$provide',
             '$ocLazyLoadProvider',
             '$httpProvider',
-            '$stateProvider',
         function(
             $urlRouterProvider,
             $provide,
             $ocLazyLoadProvider,
-            $httpProvider,
-            $stateProvider
+            $httpProvider
         ) {
             $urlRouterProvider.otherwise('/');
             /* change configure to use [[ to be the interpolation ([[2 + 2]]) */
@@ -77,7 +75,6 @@ require([
                 },
                 debug: true
             });
-            // alternatively, register the interceptor via an anonymous factory
             $httpProvider.interceptors.push(['authService','$location','$cookieStore',function(authService,$location,$cookieStore) {
                 return {
                     'request': function(config) {
@@ -92,7 +89,6 @@ require([
                         }
                         return config;
                     },
-
                     'response': function(response) {
                         return response;
                     }

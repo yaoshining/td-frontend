@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 define(['angular-mocks', 'home/home'], function() {
     describe('controller title', function() {
         var $scope;

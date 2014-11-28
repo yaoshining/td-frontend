@@ -5,7 +5,7 @@ define([
     'ng-file-upload',
 	'oclazyload'
 ],function(angular){
-	'use strict'
+	'use strict';
 	 /**
 	*  Module
 	*
