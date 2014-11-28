@@ -65,7 +65,16 @@ require([
             ]);
             $ocLazyLoadProvider.config({
                 loadedModules: ['webApp'],
-                jsLoader: require,
+                jsLoader: function(jsFiles,callback,params){
+                    var tempArray = [];
+                    if(require.toUrl('').indexOf('./src')<0){
+                        angular.forEach(jsFiles,function(file){
+                            tempArray.push('src/'+file);
+                        });
+                        jsFiles = tempArray;
+                    }
+                    require(jsFiles,callback,params);
+                },
                 debug: true
             });
             // alternatively, register the interceptor via an anonymous factory

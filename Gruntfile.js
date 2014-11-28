@@ -201,7 +201,15 @@ module.exports = function(grunt) {
                     dir: '<%= yeoman.dist %>/src/',
                     baseUrl: '<%= yeoman.app %>/src', // Directory to look for the require configuration file
                     mainConfigFile: '<%= yeoman.app %>/src/config.js', // This is relative to the grunt file
-                    modules: [{ name: 'main' }], // create a global bundle
+                    modules: [
+                        { name: 'main' },
+                        {
+                            name: 'email/module',
+                            exclude: [
+                                'main'
+                            ]
+                        }
+                    ], // create a global bundle
                     preserveLicenseComments: false, // remove all comments
                     removeCombined: true, // remove files which aren't in bundles
                     optimize: 'none', // minify bundles with uglify 2
@@ -383,7 +391,8 @@ module.exports = function(grunt) {
                         '{,*/}*.html',
                         'styles/fonts/{,*/}*.*',
                         'bower_components/sass-bootstrap/fonts/*.*',
-                        'bower_components/font-awesome/fonts/*.*'
+                        'bower_components/font-awesome/fonts/*.*',
+                        'bower_components/tinymce/*'
                     ]
                 }]
             },
