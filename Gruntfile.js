@@ -394,6 +394,17 @@ module.exports = function(grunt) {
                         'bower_components/font-awesome/fonts/*.*',
                         'bower_components/tinymce/*'
                     ]
+                },{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>/bower_components/tinymce/',
+                    dest: '<%= yeoman.dist %>/src/email/',
+                    src: [
+                        'langs/**',
+                        'plugins/**',
+                        'skins/**',
+                        'themes/**'
+                    ]
                 }]
             },
             styles: {
