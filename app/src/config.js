@@ -12,6 +12,8 @@ requirejs.config({
         /*require angular for better handling and binding controller*/
         'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router',
         'angular-ui-tinymce': '../bower_components/angular-ui-tinymce/src/tinymce',
+        'angular-translate': '../bower_components/angular-translate/angular-translate',
+        'angular-translate-static': '../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files',
         'angular-sanitize': '../bower_components/angular-sanitize/angular-sanitize',
         'ng-file-upload-shim': '../bower_components/ng-file-upload-shim/angular-file-upload-shim',
         'ng-file-upload': '../bower_components/ng-file-upload/angular-file-upload',
@@ -38,6 +40,8 @@ requirejs.config({
         'angular-ui-router': ['angular'],
         'angular-ui-tinymce': ['angular','tinymce'],
         'angular-sanitize': ['angular'],
+        'angular-translate': ['angular'],
+        'angular-translate-static': ['angular','angular-translate'],
         'oclazyload': ['angular'],
         'ui-bootstrap-tpls': ['angular'],
         'bootstrap': ['jquery'],

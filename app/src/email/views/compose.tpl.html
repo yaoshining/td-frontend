@@ -1,7 +1,7 @@
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a ng-href="" ng-click="swithComposeTab('mail')" role="tab" data-toggle="tab">Mail</a></li>
-    <li role="presentation"><a ng-href="" ng-click="swithComposeTab('groupMail')" role="tab" data-toggle="tab">Group Mail</a></li>
+    <li role="presentation" class="active"><a ng-href="" ng-click="swithComposeTab('mail')" role="tab" data-toggle="tab" translate="MAIL">Mail</a></li>
+    <li role="presentation"><a ng-href="" ng-click="swithComposeTab('groupMail')" role="tab" data-toggle="tab" translate="GROUP_MAIL">Group Mail</a></li>
 </ul>
 
 <!-- Tab panes -->
@@ -15,19 +15,19 @@
         </div>
         <form class="form-horizontal" role="form">
             <div class="form-group">
-                <label for="to" class="col-sm-1 control-label">To</label>
+                <label for="to" class="col-sm-1 control-label" translate="TO">To</label>
                 <div class="col-sm-10">
                     <input type="text" ng-model="sendTo" class="form-control" id="to" placeholder="To" ui-autocomplete="recieversAutocompleteConfig" ng-keydown="disableBlur($event)"  />
                 </div>
             </div>
             <div class="form-group">
-                <label for="subject" class="col-sm-1 control-label">Subject</label>
+                <label for="subject" class="col-sm-1 control-label" translate="SUBJECT">Subject</label>
                 <div class="col-sm-10">
                     <input ng-model="composeForm.subject" type="text" class="form-control" id="subject" placeholder="Subject">
                 </div>
             </div>
             <div class="form-group">
-                <label for="content" class="col-sm-1 control-label">Content</label>
+                <label for="content" class="col-sm-1 control-label" translate="CONTENT">Content</label>
                 <div class="col-sm-10">
                     <div>
                         <div style="position: relative">

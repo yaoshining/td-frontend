@@ -4,6 +4,8 @@ define([
 	'angular-ui-router',
     'angular-ui-tinymce',
     'angular-sanitize',
+    'angular-translate',
+    'angular-translate-static',
     'ng-file-upload',
 	'ui-autocomplete',
 	'oclazyload',
@@ -23,6 +25,7 @@ define([
          'ui.autocomplete',
          'ui.tinymce',
          'ngSanitize',
+         'pascalprecht.translate',
          'angularFileUpload',
          'filesModule',
          'ngAnimate'
@@ -30,12 +33,18 @@ define([
             '$stateProvider',
             '$ocLazyLoadProvider',
             '$provide',
-    function($stateProvider,$ocLazyLoadProvider,$provide) {
+             '$translateProvider',
+    function($stateProvider,$ocLazyLoadProvider,$provide,$translateProvider) {
 		$ocLazyLoadProvider.config({
 			loadedModules: ['emailModule'],
 			jsLoader: require,
 			debug: true
 		});
+        $translateProvider.useStaticFilesLoader({
+            prefix: 'src/email/i18n/locale-',
+            suffix: '.json'
+        });
+        $translateProvider.preferredLanguage('en');
 		$stateProvider.state('emails',{
 			url: '/emails/:emailView/:emailId',
 			views: {

@@ -10,6 +10,7 @@ define(['angular','email/module','users/module','auth/module'],function(angular,
         '$upload',
         '$timeout',
         '$log',
+        '$translate',
         'attachService',
         '$sce',
         'authService',
@@ -24,6 +25,7 @@ define(['angular','email/module','users/module','auth/module'],function(angular,
             $upload,
             $timeout,
             $log,
+            $translate,
             attachService,
             $sce,
             authService
@@ -97,6 +99,11 @@ define(['angular','email/module','users/module','auth/module'],function(angular,
 			}
             $scope.downloadAttach = function(attachId){
                 attachService.download(attachId);
+            }
+            $scope.changeLanguage = function(locale){
+                $translate.use(locale).then(function(data){
+                    $log.debug("translate to "+data);
+                });
             }
 			var availableTags = userService.getUsers();
 			function extractLast( term ) {
