@@ -44,7 +44,7 @@ define([
             prefix: 'src/email/i18n/locale-',
             suffix: '.json'
         });
-        $translateProvider.preferredLanguage('en');
+        $translateProvider.preferredLanguage(navigator.language || navigator.browserLanguage);
 		$stateProvider.state('emails',{
 			url: '/emails/:emailView/:emailId',
 			views: {
