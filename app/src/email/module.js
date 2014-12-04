@@ -38,7 +38,8 @@ define([
 		$ocLazyLoadProvider.config({
 			loadedModules: ['emailModule'],
 			jsLoader: require,
-			debug: true
+			debug: true,
+            events: true
 		});
         $translateProvider.useStaticFilesLoader({
             prefix: 'src/email/i18n/locale-',

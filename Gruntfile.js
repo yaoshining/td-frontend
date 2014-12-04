@@ -120,7 +120,7 @@ module.exports = function(grunt) {
             },
             requirejsConfig: {
                 files: ['<%= yeoman.app %>/src/config.js'],
-                tasks: ['requirejs-config-copy'],
+                tasks: ['requirejs-config-copy']
             },
             jstest: {
                 files: ['test/spec/{,*/}*.js'],

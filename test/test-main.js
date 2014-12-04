@@ -1,5 +1,5 @@
 var allTestFiles = [];
-var TEST_REGEXP = /app\/src\/\w*\/\w*\.spec\.js$/;
+var TEST_REGEXP = /app\/src\/\w*\/test\/\w*\.spec\.js$/;
 
 var pathToModule = function(path) {
   return path.replace(/^\/base\//, '../../').replace(/\.js$/, '');
@@ -24,9 +24,12 @@ requirejs.config({
         'angular-resource': '../bower_components/angular-resource/angular-resource',
         /*require angular animate for easily handling animation. I recommend to use this with tweenmax (bower install --save greensock)*/
         'angular-animate': '../bower_components/angular-animate/angular-animate',
+        'angular-cookies': '../bower_components/angular-cookies/angular-cookies',
         /*require angular for better handling and binding controller*/
         'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router',
         'angular-ui-tinymce': '../bower_components/angular-ui-tinymce/src/tinymce',
+        'angular-translate': '../bower_components/angular-translate/angular-translate',
+        'angular-translate-static': '../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files',
         'angular-sanitize': '../bower_components/angular-sanitize/angular-sanitize',
         'ng-file-upload-shim': '../bower_components/ng-file-upload-shim/angular-file-upload-shim',
         'ng-file-upload': '../bower_components/ng-file-upload/angular-file-upload',
@@ -49,9 +52,12 @@ requirejs.config({
         'angular-mocks': ['angular'],
         'angular-resource': ['angular'],
         'angular-animate': ['angular'],
+        'angular-cookies': ['angular'],
         'angular-ui-router': ['angular'],
         'angular-ui-tinymce': ['angular','tinymce'],
         'angular-sanitize': ['angular'],
+        'angular-translate': ['angular'],
+        'angular-translate-static': ['angular','angular-translate'],
         'oclazyload': ['angular'],
         'ui-bootstrap-tpls': ['angular'],
         'bootstrap': ['jquery'],
