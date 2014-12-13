@@ -1,0 +1,113 @@
+@import 'buttons';
+@import 'progress-bars';
+@import 'forms';
+@import 'navbar';
+@import 'sidebar';
+@import 'colors';
+/***************************  login begin  *********************************/
+.login-container {
+  width: 375px;
+  margin: 0 auto;
+  .login-box {
+    .widget-main {
+      padding-bottom: 16px;
+    }
+    .forgot-password-link {
+      color: #FE9;
+    }
+    .user-signup-link {
+      color: #CF7;
+    }
+    .toolbar {
+      background: #5090C1;
+      border-top: 2px solid #597597;
+      &>div{
+        width: 50%;
+        display: inline-block;
+        padding: 9px 0 11px;
+        &:first-child{
+          float: left;
+          text-align: left;
+          a{
+            margin-left: 11px;
+          }
+          &+div {
+            float: right;
+            text-align: right;
+            a {
+              margin-right: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .widget-box{
+    padding: 6px;
+    background-color: #394557;
+    .widget-main {
+      padding: 16px 36px 36px;
+      background: #F7F7F7;
+    }
+    .widget-body {
+      .toolbar > div >a {
+        font-size: 15px;
+        font-weight: 400;
+        text-shadow: 1px 0 1px rgba(0,0,0,.25);
+      }
+    }
+  }
+  label{
+    margin-bottom: 11px;
+  }
+}.space {
+   max-height: 1px;
+   min-height: 1px;
+   overflow: hidden;
+   margin: 12px 0;
+ }
+.space-6 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 6px 0 5px;
+}
+.social-or-login {
+  margin-top: 4px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  :first-child {
+    display: inline-block;
+    background: #F7F7F7;
+    padding: 0 8px;
+    color: #5090C1;
+    font-size: 13px;
+  }
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px dotted #A6C4DB;
+  }
+}
+.social-login {
+  a {
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 46px;
+    padding: 0;
+    margin: 0 1px;
+    border-width: 0;
+    &>.ebp-icon {
+      font-size: 24px;
+      margin: 0;
+    }
+  }
+}/************************** login end ******************************/

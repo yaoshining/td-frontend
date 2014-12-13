@@ -35,10 +35,10 @@ define([
             }
         ]);
 	}]).run(['$http','$ocLazyLoad', function($http,$ocLazyLoad){
-		$ocLazyLoad.load({
-			name: 'filesModule',
-			files: ['files/services/attachService','files/repositories/Attachment']
-		});
+//		$ocLazyLoad.load({
+//			name: 'filesModule',
+//			files: ['files/services/attachService','files/repositories/Attachment']
+//		});
 		$http.defaults.headers.common.Authorization = 'Basic eWFvOnlzMTk4NzU2';
 	}]);
 	return filesModule;

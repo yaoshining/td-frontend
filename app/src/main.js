@@ -1,8 +1,17 @@
 requirejs.config({
-    baseUrl: './src'
+    baseUrl: './src',
+    paths: {
+      'styles': '../styles'
+    },
+    map: {
+        '*': {
+            'css': '../bower_components/require-css/css.min'
+        }
+    }
 });
 require([
     'angular',
+    'routes',
     'jquery',
     'angular-resource',
     'angular-animate',
@@ -13,7 +22,7 @@ require([
     'bootstrap',
     'home/home',
     'auth/module'
-], function(angular) {
+], function(angular,routes) {
     'use strict';
 
     /*App Module*/
@@ -34,11 +43,13 @@ require([
             '$provide',
             '$ocLazyLoadProvider',
             '$httpProvider',
+            '$stateProvider',
         function(
             $urlRouterProvider,
             $provide,
             $ocLazyLoadProvider,
-            $httpProvider
+            $httpProvider,
+            $stateProvider
         ) {
             $urlRouterProvider.otherwise('/');
             /* change configure to use [[ to be the interpolation ([[2 + 2]]) */
@@ -94,11 +105,31 @@ require([
                     }
                 };
             }]);
-        }]).run(['$ocLazyLoad', function($ocLazyLoad){
-            $ocLazyLoad.load({
-                name: 'emailModule',
-                files: ['email/module']
+            angular.forEach(routes,function(config,state){
+                var stateConfig = {
+                    url: config.url,
+                    views: config.views,
+                    resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+
+                    }
+                }
+                if(config.modules){
+                    angular.forEach(config.modules,function(files,name){
+                        stateConfig.resolve[name+'Loader'] = ['$ocLazyLoad', function($ocLazyLoad) {
+                                return $ocLazyLoad.load({
+                                    name: name,
+                                    files: files
+                                });
+                        }]
+                    });
+                }
+                $stateProvider.state(state,stateConfig);
             });
+        }]).run(['$ocLazyLoad',function($ocLazyLoad){
+//            $ocLazyLoad.load({
+//                name: 'emailModule',
+//                files: ['email/module']
+//            });
         }]);
 
         /*bootstrap model*/

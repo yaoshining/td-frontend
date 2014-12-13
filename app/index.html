@@ -20,11 +20,33 @@
     <script src="src/main.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
-<body unresolved>
+<body unresolved class="no-skin">
     <!--[if lt IE 10]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div ui-view></div>
+    <div ui-view="body" style="min-height: 100%">
+        <div id="navbar" class="navbar navbar-default" ui-view="navbar">
+            <div ng-include="'src/home/navbar.tpl.html'"></div>
+       </div>
+        <div class="main-container" id="mainContainer" ui-view="main">
+            <div id="sidebar" class="sidebar responsive" ui-view="sidebar" ng-controller="SidebarController" ng-class="{'menu-min': minified}">
+                <div ng-include="'src/home/sidebar.tpl.html'"></div>
+            </div>
+            <div class="main-content">
+                <div class="main-content-inner">
+                    <div class="breadcrumbs" id="breadcrumbs">
+                        <ul class="breadcrumb">
+                            <li>
+                                <i class="fa fa-home home-icon"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="page-content" ui-view></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
      <!--<script>
         (function(b, o, i, l, e, r)
         {

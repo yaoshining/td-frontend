@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="email-main">
-	<div class="list-group col-md-2 email-navbar">
+	<div class="list-group email-navbar">
 		<a ng-href="#/emails/compose/" class="list-group-item" ng-class="{'active': viewName==='compose'}" translate="COMPOSE"></a>
 		<a ng-href="#/emails/inbox/" class="list-group-item" translate="CHECK"></a>
 		<a class="list-group-item" translate="CONTACTS"></a>
@@ -24,7 +24,7 @@
 		<a href="#" class="list-group-item" translate="SPAM"></a>
 		<a href="#" class="list-group-item" translate="SUBSCRIPTION"></a>
 	</div>
-	<div class="col-md-10" style="padding: 5px 10px 0 10px;overflow-x: hidden;overflow-y: auto;height: 100%">
+	<div style="padding: 5px 10px 0 10px;overflow-x: hidden;overflow-y: auto;height: 100%;width: 83.33333%">
 		<div ng-switch on="viewName">
             <div ng-switch-when="inbox">
                 <div ng-include="'/src/email/views/inbox.tpl.html'"></div>

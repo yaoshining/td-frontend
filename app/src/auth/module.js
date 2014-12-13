@@ -20,7 +20,7 @@ define(['angular','angular-ui-router','angular-cookies'],function(angular){
         $stateProvider.state('login',{
             url: '/auth/login',
             views: {
-                '': {
+                'body': {
                     controller: 'LoginController',
                     templateUrl: 'src/auth/views/login.tpl.html'
                 }

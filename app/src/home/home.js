@@ -4,8 +4,19 @@ define(['angular', 'angular-ui-router'], function(angular) {
         /*config path for home page*/
         $stateProvider.state('home', {
             url: '/',
-            templateUrl: 'src/home/home.tpl.html',
-            controller: 'HomeController'
+            views: {
+//                'navbar': {
+//                    templateUrl: 'src/home/navbar.tpl.html'
+//                },
+//                'sidebar': {
+//                    controller: 'SidebarController',
+//                    templateUrl: 'src/home/sidebar.tpl.html'
+//                },
+                '': {
+                    templateUrl: 'src/home/home.tpl.html',
+                    controller: 'HomeController'
+                }
+            }
         });
     }]).controller('HomeController', [
         '$scope',
@@ -13,6 +24,11 @@ define(['angular', 'angular-ui-router'], function(angular) {
             /* initialize */
             $scope.pageTitle = 'dummy';
         }
-    ]);
+    ]).controller('SidebarController',['$scope',function($scope){
+        $scope.minified = false;
+        $scope.toggleSize = function(){
+            $scope.minified = !$scope.minified;
+        }
+    }]);
 });
 
