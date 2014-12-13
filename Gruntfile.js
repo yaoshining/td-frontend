@@ -356,7 +356,14 @@ module.exports = function(grunt) {
         // to use the Usemin blocks.
         cssmin: {
             dist: {
-                files: { '<%= yeoman.dist %>/styles/style.css': [ '.tmp/styles/{,*/}*.css' ] }
+//                files: { '<%= yeoman.dist %>/styles/style.css': [ '.tmp/styles/{,*/}*.css' ] }
+                files: [{
+                    expand: true,
+                    cwd: '.tmp/styles/',
+                    src: ['{,*/}*.css', '!*.min.css'],
+                    dest: '<%= yeoman.dist %>/styles/',
+                    ext: '.css'
+                }]
             }
         },
 
@@ -392,7 +399,8 @@ module.exports = function(grunt) {
                         'styles/fonts/{,*/}*.*',
                         'bower_components/sass-bootstrap/fonts/*.*',
                         'bower_components/font-awesome/fonts/*.*',
-                        'bower_components/tinymce/*'
+                        'bower_components/tinymce/*',
+                        'bower_components/require-css/*'
                     ]
                 },{
                     expand: true,
@@ -453,7 +461,7 @@ module.exports = function(grunt) {
             'clean:server',
             'configureProxies:livereload',
             'concurrent:server',
-            'concat',
+  //          'concat',
             'autoprefixer',
             'connect:livereload',
             'watch'
