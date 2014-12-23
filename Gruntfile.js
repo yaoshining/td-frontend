@@ -113,6 +113,7 @@ module.exports = function(grunt) {
             js: {
                 files: [
                     '<%= yeoman.app %>/src/{,*/}*.js',
+                    '<%= yeoman.app %>/conf/{,*/}*.js',
                     '!<%= yeoman.app %>/src/{,*/}*.spec.js'
                 ],
                 tasks: ['jshint'],
@@ -392,6 +393,7 @@ module.exports = function(grunt) {
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dist %>',
                     src: [
+                        'conf/**',
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.webp',

@@ -1,7 +1,7 @@
 define(['angular','email/module','users/module','auth/module'],function(angular,emailModule){
 	emailModule.controller('EmailController', [
 		'$scope',
-		'$location', 
+		'$location',
 		'$compile',
 		'EmailService',
 		'UserService',
@@ -31,7 +31,10 @@ define(['angular','email/module','users/module','auth/module'],function(angular,
             authService
         ){
 			$scope.emails = emailService.getEmails(authService.currentUser);
-			$scope.viewName = $state.params.emailView;
+			var viewName = $scope.viewName = $state.params.emailView;
+            if(!viewName){
+                $state.go('emails',{emailView: 'inbox'});
+            }
             if($state.params.emailId){
                 var emailId = $state.params.emailId;
                 $scope.email = emailService.getEmail(emailId);

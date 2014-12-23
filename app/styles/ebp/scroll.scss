@@ -13,6 +13,9 @@
   width: 0;
   opacity: 0;
 }
+.ebp-scroll {
+    overflow: hidden;
+}
 .ebp-scroll:hover .scroll-active, .scroll-active.scroll-track:hover, .scroll-active.scroll-track.scroll-hover, .scroll-active.scroll-track.active, .scroll-active.scroll-track:active {
   width: 8px;
   opacity: 1;

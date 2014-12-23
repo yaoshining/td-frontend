@@ -34,11 +34,7 @@ define([
                 return $delegate;
             }
         ]);
-	}]).run(['$http','$ocLazyLoad', function($http,$ocLazyLoad){
-//		$ocLazyLoad.load({
-//			name: 'filesModule',
-//			files: ['files/services/attachService','files/repositories/Attachment']
-//		});
+	}]).run(['$http', function($http){
 		$http.defaults.headers.common.Authorization = 'Basic eWFvOnlzMTk4NzU2';
 	}]);
 	return filesModule;

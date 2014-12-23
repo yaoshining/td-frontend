@@ -13,6 +13,7 @@
     <link rel="import" href="bower_components/polymer/polymer.html">
     <script src="src/vendor/require.js" type="text/javascript" charset="utf-8"></script>
     <script src="src/vendor/modernizr.js" type="text/javascript" charset="utf-8"></script>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="src/vendor/excanvas.js"></script><![endif]-->
     <!--build tag-->
     <!--do not remove the build script tag. This is automatically replace when the script is built-->
     <script src="src/config.js" type="text/javascript" charset="utf-8"></script>
@@ -34,10 +35,14 @@
             </div>
             <div class="main-content">
                 <div class="main-content-inner">
-                    <div class="breadcrumbs" id="breadcrumbs">
+                    <div class="breadcrumbs" id="breadcrumbs" ng-controller="NavigatorController">
                         <ul class="breadcrumb">
                             <li>
                                 <i class="fa fa-home home-icon"></i>
+                                <a ui-sref="home">Home</a>
+                            </li>
+                            <li ng-repeat="path in paths">
+                                {{path}}
                             </li>
                         </ul>
                     </div>

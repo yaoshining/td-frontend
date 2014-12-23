@@ -5,10 +5,14 @@
 @import 'sidebar';
 @import 'colors';
 @import 'scroll';
+@import 'typography';
+@import 'dropdowns';
+@import 'grid';
 /***************************  login begin  *********************************/
 .login-container {
   width: 375px;
   margin: 0 auto;
+  position: relative;
   .login-box {
     .widget-main {
       padding-bottom: 16px;
@@ -73,6 +77,32 @@
   overflow: hidden;
   margin: 12px 0;
   margin: 6px 0 5px;
+}
+.hr {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    border-width: 1px 0 0 0;
+    border-top: 1px solid #E3E3E3;
+    margin: 12px 0;
+    border-top-color: rgba(0,0,0,.11);
+}
+.hr-8, .hr8 {
+    margin: 8px 0;
+}
+.hr-32, .hr32 {
+    margin: 32px 0;
+}
+.hr-double {
+    height: 3px;
+    border-top: 1px solid #E3E3E3;
+    border-bottom: 1px solid #E3E3E3;
+    border-top-color: rgba(0,0,0,.11);
+    border-bottom-color: rgba(0,0,0,.11);
+}
+.hr.dotted, .hr-dotted {
+    border-style: dotted;
 }
 .social-or-login {
   margin-top: 4px;

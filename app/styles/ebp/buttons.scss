@@ -1,18 +1,18 @@
 .btn {
-  display: inline-block;
-  color: #FFF!important;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-  background-image: none!important;
-  border: 5px solid #FFF;
-  border-radius: 0;
-  box-shadow: none!important;
-  -webkit-transition: background-color .15s,border-color .15s,opacity .15s;
-  -o-transition: background-color .15s,border-color .15s,opacity .15s;
-  transition: background-color .15s,border-color .15s,opacity .15s;
-  cursor: pointer;
-  vertical-align: middle;
-  margin: 0;
-  position: relative;
+    display: inline-block;
+    color: #FFF!important;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    background-image: none!important;
+    border: 5px solid #FFF;
+    border-radius: 0;
+    box-shadow: none!important;
+    -webkit-transition: background-color .15s,border-color .15s,opacity .15s;
+    -o-transition: background-color .15s,border-color .15s,opacity .15s;
+    transition: background-color .15s,border-color .15s,opacity .15s;
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 0;
+    position: relative;
 }
 .btn, .btn-default, .btn:focus, .btn-default:focus {
   background-color: #abbac3!important;
@@ -84,4 +84,14 @@
 }
 .label-info, .label.label-info, .badge.badge-info, .badge-info {
   background-color: #3a87ad;
+}
+.btn-minier, .btn-group-minier>.btn {
+    padding: 0 4px;
+    line-height: 18px;
+    border-width: 2px;
+    font-size: 12px;
+}
+.btn-xs>.ebp-icon.icon-on-right, .btn-mini>.ebp-icon.icon-on-right, .ebp-minier>.ebp-icon.icon-on-right {
+    margin-right: 0;
+    margin-left: 2px;
 }

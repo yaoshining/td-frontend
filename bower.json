@@ -28,6 +28,7 @@
     "angular-translate": "~2.4.2",
     "angular-translate-loader-static-files": "~2.4.2",
     "fuelux": "~3.4.0",
-    "require-css": "~0.1.8"
+    "require-css": "~0.1.8",
+    "three.js": "*"
   }
 }

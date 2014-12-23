@@ -1,5 +1,13 @@
 define(function(){
     return {
+        'homeModule': [
+            'home/home',
+            'css!styles/ebp/infobox',
+            'css!styles/ebp/widgets',
+            'vendor/jquery.sparkline',
+            'vendor/angular.easypiechart',
+            'plot'
+        ],
         'emailModule': [
             'email/module',
             'email/controllers/emailController',

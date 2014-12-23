@@ -24,15 +24,15 @@
     </div>
 </div>
 <ul class="nav nav-list" style="top: 0px;">
-    <li class="active">
-        <a ui-sref="home">
-            <i class="menu-icon fa fa-tachometer"></i>
-            <span class="menu-text"> Dashboard </span>
+    <li ng-repeat="menu in menus" ui-sref-active="active">
+        <a ui-sref="{{menu.sref}}" ng-click="navigateTo(menu.name)">
+            <i class="menu-icon fa" ng-class="menu.iconClass"></i>
+            <span class="menu-text">{{menu.name}}</span>
         </a>
         <b class="arrow"></b>
     </li>
 
-    <li>
+    <li class="open">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-desktop"></i>
                                 <span class="menu-text">
@@ -44,7 +44,7 @@
 
         <b class="arrow"></b>
 
-        <ul class="submenu nav-hide" style="display: none;">
+        <ul class="submenu">
             <li class="">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-caret-right"></i>
@@ -157,7 +157,7 @@
                 <b class="arrow"></b>
             </li>
 
-            <li class="active">
+            <li>
                 <a href="jquery-ui.html">
                     <i class="menu-icon fa fa-caret-right"></i>
                     jQuery UI
@@ -336,7 +336,7 @@
                                     Calendar
 
                                     <span class="badge badge-transparent tooltip-error" title="2 Important Events">
-                                        <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                        <i class="ebp-icon fa fa-exclamation-triangle red bigger-130"></i>
                                     </span>
                                 </span>
         </a>

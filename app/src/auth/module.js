@@ -66,6 +66,8 @@ define(['angular','angular-ui-router','angular-cookies'],function(angular){
                 });
             };
         }]
-    });
+    }).run(['$http',function($http){
+        $http.defaults.headers.common.Authorization = 'Basic eWFvOnlzMTk4NzU2';
+    }]);
     return authModule;
 });

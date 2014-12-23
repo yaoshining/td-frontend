@@ -35,41 +35,11 @@ define([
             '$provide',
             '$translateProvider',
     function($stateProvider,$ocLazyLoadProvider,$provide,$translateProvider) {
-//		$ocLazyLoadProvider.config({
-//			loadedModules: ['emailModule'],
-//			jsLoader: require,
-//			debug: true,
-//            events: true
-//		});
         $translateProvider.useStaticFilesLoader({
             prefix: 'src/email/i18n/locale-',
             suffix: '.json'
         });
         $translateProvider.preferredLanguage(navigator.language || navigator.browserLanguage);
-//		$stateProvider.state('emails',{
-//			url: '/emails/:emailView/:emailId',
-//			views: {
-//				'': {
-//					controller: 'EmailController',
-//					templateUrl: 'src/email/views/email.tpl.html'
-//				}
-//			},
-//			resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
-//				loadEmailCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-//					// you can lazy load files for an existing module
-//					 return $ocLazyLoad.load({
-//					    name: 'emailModule',
-//					    files: [
-//                            'email/controllers/emailController',
-//                            'email/services/emailService',
-//                            'email/repositories/Email',
-//                            'css!styles/email/email',
-//                            'css!styles/jquery-ui/jquery-ui'
-//                        ]
-//					 });
-//			   	 }]
-//			}
-//		});
 		/* add safeApply function for $rootScope - called by $scope.$root.safeApply(fn) */
         $provide.decorator('$rootScope', [
             '$delegate',
@@ -87,11 +57,7 @@ define([
                 return $delegate;
             }
         ]);
-	}]).run(['$http','$ocLazyLoad', function($http,$ocLazyLoad){
-//		$ocLazyLoad.load({
-//			name: 'usersModule',
-//			files: ['users/module']
-//		});
+	}]).run(['$http', function($http){
 		$http.defaults.headers.common.Authorization = 'Basic eWFvOnlzMTk4NzU2';
 	}]);
 	return emailModule;
