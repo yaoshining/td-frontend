@@ -4,6 +4,23 @@
     box-shadow: none;
     margin: 3px 0;
     border: 1px solid #CCC;
+    &.widget-color-blue2 {
+      border-color: #5090C1;
+      &>.widget-header {
+        background: none repeat scroll 0% 0% #5090C1;
+        border-color: #5090C1;
+      }
+    }
+    &.widget-color-green2 {
+      border-color: #2E8965;
+      & > .widget-header {
+        background: none repeat scroll 0% 0% #2E8965;
+        border-color: #2E8965;
+      }
+    }
+}
+.widget-box[class*="widget-color-"] > .widget-header {
+  color: #FFF;
 }
 .widget-header-small {
     min-height: 31px;
@@ -61,4 +78,7 @@
 .widget-main {
     padding: 12px;
     position: relative;
+    &.padding-8 {
+      padding: 8px;
+    }
 }

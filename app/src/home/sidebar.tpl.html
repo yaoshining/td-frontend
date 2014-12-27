@@ -24,15 +24,29 @@
     </div>
 </div>
 <ul class="nav nav-list" style="top: 0px;">
-    <li ng-repeat="menu in menus" ui-sref-active="active">
-        <a ui-sref="{{menu.sref}}" ng-click="navigateTo(menu.name)">
+    <li ng-repeat="menu in menus.$root" ui-sref-active="active" ng-class="{open: menu.isOpen}">
+        <a ui-sref="{{menu.sref}}" ng-click="menus[menu.name]?openMenu($event,menu):navigateTo(menu.name)" ng-if="menu.sref">
             <i class="menu-icon fa" ng-class="menu.iconClass"></i>
             <span class="menu-text">{{menu.name}}</span>
+            <b ng-if="menus[menu.name]" class="arrow fa fa-angle-down"></b>
         </a>
+        <!--<a href="javascript:void(0)" ng-click="menu.isOpen=!menu.isOpen" ng-if="!menu.sref">
+            <i class="menu-icon fa" ng-class="menu.iconClass"></i>
+            <span class="menu-text">{{menu.name}}</span>
+            <b ng-if="menus[menu.name]" class="arrow fa fa-angle-down"></b>
+        </a>-->
         <b class="arrow"></b>
+        <ul class="submenu" ng-if="menus[menu.name]">
+            <li ng-repeat="submenu in menus[menu.name]" ui-sref-active="active">
+                <a ui-sref="{{submenu.sref}}" ng-click="navigateTo(submenu.name);" ng-if="submenu.sref">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    <span class="menu-text">{{submenu.name}}</span>
+                </a>
+            </li>
+        </ul>
     </li>
 
-    <li class="open">
+    <li>
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-desktop"></i>
                                 <span class="menu-text">

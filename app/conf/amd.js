@@ -7,16 +7,28 @@ requirejs.config({
         'styles': '../styles',
         'conf': '../conf',
         'plugins': '../plugins',
+        'codemirror': '../bower_components/codemirror/lib/codemirror',
+        'ui-codemirror': '../bower_components/angular-ui-codemirror/ui-codemirror',
         'flot': 'vendor/flot/flot',
-        'plot': 'vendor/flot/pie'
+        'plot': 'vendor/flot/pie',
+        'fuelux': '../bower_components/fuelux/dist/js/fuelux.min',
+        'moment': '../bower_components/moment/moment'
     },
     shim: {
+        'codemirror': {
+            deps: ['css!../bower_components/codemirror/lib/codemirror'],
+            exports: 'CodeMirror'
+        },
+        'vendor/core/pretty': ['css!styles/vendor/prettify'],
+        'plugins/core/ebp-prettify': ['vendor/core/pretty'],
+        'ui-codemirror': ['codemirror','angular'],
         'flot': ['jquery'],
-        'plot': ['flot']
+        'plot': ['flot'],
+        'fuelux': ['bootstrap','jquery','moment','css!styles/ebp/tree']
     },
     map: {
         '*': {
-            'css': '../bower_components/require-css/css.min'
+            'css': '/bower_components/require-css/css.min.js'
         }
     }
 });

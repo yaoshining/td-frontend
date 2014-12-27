@@ -8,6 +8,8 @@
 @import 'typography';
 @import 'dropdowns';
 @import 'grid';
+@import 'alert';
+@import 'modal';
 /***************************  login begin  *********************************/
 .login-container {
   width: 375px;
@@ -142,3 +144,11 @@
     }
   }
 }/************************** login end ******************************/
+li.tab-gray {
+  z-index: 2;
+}
+li.tab-gray.active {
+  & > a,& > a:hover,& > a:focus {
+    background-color: #F5F5F5;
+  }
+}

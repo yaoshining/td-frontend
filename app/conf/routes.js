@@ -30,6 +30,42 @@ define(['angular','conf/modules'],function(angular,modules){
                 'filesModule': modules.filesModule
             }
         },
+        UIAndElements: {
+            url: '/ui',
+            views: {
+                '': {
+                    template: "<div ui-view style='position: relative'></div>"
+                }
+            },
+            modules: {
+                'UIAndElementsModule': modules.UIAndElementsModule
+            }
+        },
+        'UIAndElements.bootstrap': {
+            url: '/bootstrap',
+            views: {
+                '': {
+                    controller: 'BootstrapController',
+                    templateUrl: 'src/UIAndElements/views/bootstrap.tpl.html'
+                }
+            },
+            modules: {
+                'UIAndElementsModule': modules['UIAndElementsModule.bootstrap']
+            }
+        },
+        'UIAndElements.treeView': {
+            url: '/treeview',
+            views: {
+                '': {
+                    controller: 'TreeViewController',
+                    templateUrl: 'src/UIAndElements/views/treeView.tpl.html'
+                }
+            },
+            modules: {
+                'UIAndElementsModule': modules['UIAndElementsModule.treeView'],
+                'ebp.tree': modules.ebpTreePlugin
+            }
+        },
         music: {
             url: '/music',
             views: {

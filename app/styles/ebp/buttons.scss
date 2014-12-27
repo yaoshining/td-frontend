@@ -14,6 +14,15 @@
     margin: 0;
     position: relative;
 }
+.btn.active:after {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid #EFE5B5;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+}
 .btn, .btn-default, .btn:focus, .btn-default:focus {
   background-color: #abbac3!important;
   border-color: #abbac3;
@@ -26,7 +35,7 @@
   background-color: #87b87f!important;
   border-color: #87b87f;
 }
-.btn-success:hover, .btn-success:active, .open>.btn-success.dropdown-toggle {
+.btn-success:hover, .btn-success:active, .btn-success.active, .open>.btn-success.dropdown-toggle {
   background-color: #629b58!important;
   border-color: #87b87f;
 }
@@ -42,7 +51,7 @@
   background-color: #ffb752!important;
   border-color: #ffb752;
 }
-.btn-warning:hover, .btn-warning:active, .open>.btn-warning.dropdown-toggle {
+.btn-warning:hover, .btn-warning:active, .btn-warning.active, .open>.btn-warning.dropdown-toggle {
   background-color: #e59729!important;
   border-color: #ffb752;
 }
@@ -50,9 +59,13 @@
   background-color: #d15b47!important;
   border-color: #d15b47;
 }
-.btn-danger:hover, .btn-danger:active, .open>.btn-danger.dropdown-toggle {
+.btn-danger:hover, .btn-danger:active,.open>.btn-danger.dropdown-toggle {
   background-color: #b74635!important;
   border-color: #d15b47;
+}
+.btn-danger.active {
+  background-color: #C4513E !important;
+  border-color: #AA4434;
 }
 .btn-primary, .btn-primary:focus {
   background-color: #428bca!important;
@@ -60,13 +73,17 @@
 }
 .btn-primary:hover, .btn-primary:active, .open>.btn-primary.dropdown-toggle {
   background-color: #1b6aaa!important;
-  border-color: #428bca;
+  border-color: #428bca!important;
+}
+.btn-primary.active {
+  background-color: #2F7BBA !important;
+  border-color: #27689D;
 }
 .btn-pink, .btn-pink:focus {
   background-color: #d6487e!important;
   border-color: #d6487e;
 }
-.btn-pink:hover, .btn-pink:active, .open>.btn-pink.dropdown-toggle {
+.btn-pink:hover, .btn-pink:active, .btn-pink.active, .open>.btn-pink.dropdown-toggle {
   background-color: #b73766!important;
   border-color: #d6487e;
 }
@@ -94,4 +111,21 @@
 .btn-xs>.ebp-icon.icon-on-right, .btn-mini>.ebp-icon.icon-on-right, .ebp-minier>.ebp-icon.icon-on-right {
     margin-right: 0;
     margin-left: 2px;
+}
+button.btn:active,button.btn.active {
+  top: 1px;
+}
+.btn-group {
+  & > .btn, & > .btn + .btn {
+    margin: 0px 1px 0px 0px;
+  }
+  & > .btn-sm.active:after, & + .btn-sm.active:after {
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-bottom-width: 1px;
+  }
+  &> .btn-sm, & + .btn-sm {
+    border-width: 2px;
+  }
 }

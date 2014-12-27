@@ -124,16 +124,21 @@ require(['conf/amd'],function(){
                 '$scope',
                 '$rootScope',
                 'NavigatorService',
-                function($scope,$rootScope,navigatorService){
+                '$state',
+                function($scope,$rootScope,navigatorService,$state){
                     $scope.minified = false;
                     $scope.toggleSize = function(){
                         $scope.minified = !$scope.minified;
-                    }
+                    };
                     $scope.menus = menus;
                     $scope.navigateTo = function(path){
                         navigatorService.paths = path.split('/');
                         $rootScope.$broadcast('navigation.change');
-                    }
+                    };
+                    $scope.openMenu = function($event,menu){
+                        $event.preventDefault();
+                        menu.isOpen=!menu.isOpen;
+                    };
                 }
             ]).controller('NavigatorController',[
                 '$scope',
@@ -141,7 +146,6 @@ require(['conf/amd'],function(){
                 function($scope,navigatorService){
                     $scope.$on('navigation.change',function(){
                         $scope.paths = navigatorService.paths;
-                        console.log(navigatorService);
                     });
                 }
             ]).service('NavigatorService',[function(){

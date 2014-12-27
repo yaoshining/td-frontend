@@ -25,6 +25,18 @@ define(function(){
             'files/module',
             'files/services/attachService',
             'files/repositories/Attachment'
+        ],
+        'UIAndElementsModule' : [
+            'UIAndElements/module'
+        ],
+        'UIAndElementsModule.bootstrap': [
+            'UIAndElements/controllers/BootstrapController'
+        ],
+        'UIAndElementsModule.treeView': [
+            'UIAndElements/controllers/TreeViewController'
+        ],
+        'ebpTreePlugin': [
+            'plugins/core/ebp-tree'
         ]
     }
 });

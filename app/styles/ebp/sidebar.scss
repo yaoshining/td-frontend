@@ -255,6 +255,11 @@
         }
       }
     }
+    &.open {
+      & > a:after {
+        display: none;
+      }
+    }
   }
   & > li {
     display: block;
@@ -388,10 +393,6 @@
       &>a{
         font-weight: 700;
         color: #2b7dbc;
-        &:after {
-          border-right-color: #2b7dbc;
-          -moz-border-right-colors: #2b7dbc;
-        }
       }
       &>a,&>a:hover,&>a:focus {
         background-color: #fff
@@ -420,14 +421,22 @@
     &>.submenu:before, &>.submenu>li:before {
         border-color: #9dbdd6;
     }
-    .submenu>li>a {
-      border-top-color: #e4e4e4;
-      background-color: #fff;
-      color: #616161;
+    .submenu>li {
+      & > a {
+        border-top-color: #e4e4e4;
+        background-color: #fff;
+        color: #616161;
         &:hover {
-            color: #4b88b7;
-            background-color: #f1f5f9;
+          color: #4b88b7;
+          background-color: #f1f5f9;
         }
+      }
+      &.active:not(.open) > a {
+        background-color: #F5F7FA;
+      }
+      &.active > a {
+        color: #2B7DBC;
+      }
     }
       &.open>a {
           background-color: #fafafa;
@@ -437,6 +446,16 @@
   .submenu {
     background-color: #fff;
     border-color: #e5e5e5;
+  }
+  li {
+    &.active {
+      & > a {
+        &:after {
+          border-right-color: #2b7dbc;
+          -moz-border-right-colors: #2b7dbc;
+        }
+      }
+    }
   }
     .open>a,.open>a:hover,.open>a:focus {
         background-color: #fafafa;
