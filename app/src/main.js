@@ -10,6 +10,7 @@ require(['conf/amd'],function(){
         'conf/routes',
         'conf/menus',
         'jquery',
+        'kreate',
         'angular-resource',
         'angular-animate',
         'angular-ui-router',

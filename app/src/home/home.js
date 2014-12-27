@@ -102,7 +102,6 @@ define(['angular', 'angular-ui-router','plugins/sparklines/ebp-sparklines','plug
             };
             $scope.plotEvents = {
                 plothover: function(event,pos,obj){
-                    console.log(obj);
                 }
             };
         }

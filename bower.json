@@ -30,6 +30,7 @@
     "fuelux": "~3.4.0",
     "require-css": "~0.1.8",
     "three.js": "*",
-    "angular-ui-codemirror": "~0.2.1"
+    "angular-ui-codemirror": "~0.2.1",
+    "kreate": "~0.0.5"
   }
 }
