@@ -166,7 +166,7 @@ define(['UIAndElements/module'],function(module){
             mode: 'xml'
         };
         $scope.goToPlugin = function(plugin){
-            window.location.href = $state.href('UIAndElements.bootstrap')+'#'+String.toLowerCase(plugin);
+            window.location.href = $state.href('UIAndElements.bootstrap')+'#'+angular.lowercase(plugin);
         };
     }]);
 });

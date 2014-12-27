@@ -15,6 +15,8 @@
             replace: false,
             transclude: false,
             scope: {
+                openedIconClass: '@',
+                closedIconClass: '@'
             },
             compile: function compile(tElement,tAttrs,transclude){
                 return {
@@ -87,6 +89,10 @@
                                 }, 400);
                             },
                             folderSelect: false
+                        }).on('opened.fu.tree',function(event,branch){
+                            element.find('.glyphicon-folder-open').addClass(scope.openedIconClass).removeClass(scope.closedIconClass);
+                        }).on('closed.fu.tree',function(event,branch){
+                            element.find('.glyphicon-folder-close').addClass(scope.closedIconClass).removeClass(scope.openedIconClass);
                         });
                     }
                 }
