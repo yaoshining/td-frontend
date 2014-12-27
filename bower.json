@@ -29,6 +29,7 @@
     "angular-translate-loader-static-files": "~2.4.2",
     "fuelux": "~3.4.0",
     "require-css": "~0.1.8",
-    "three.js": "*"
+    "three.js": "*",
+    "angular-ui-codemirror": "~0.2.1"
   }
 }
