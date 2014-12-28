@@ -1,15 +1,7 @@
 <div ng-controller="TooltipDemoController">
-    <div class="form-group">
-        <label>动态提示框文本</label>
-        <input type="text" ng-model="dynamicTooltipText" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label>动态提示框弹出文本</label>
-        <input type="text" ng-model="dynamicTooltip" class="form-control" />
-    </div>
     <div class="row">
         <div class="col-sm-6">
-            <p class="minijianyingbikaishu" style="font-size: 21px;font-weight: 400">
+            <p class="minijianyingbikaishu" style="font-size: 24px;font-weight: 400">
                 爱之颂歌<br />
                 我若能说万人的方言<br />
                 并天使的话语<br />
@@ -39,7 +31,7 @@
             </p>
         </div>
         <div class="col-sm-6">
-            <p class="minijianyingbikaishu" style="font-size: 21px;font-weight: 400">
+            <p class="minijianyingbikaishu" style="font-size: 22px;font-weight: 400">
                 <br />
                 凡事盼望 凡事忍耐<br />
                 凡事包容 凡事相信<br />
@@ -69,8 +61,16 @@
     </div>
     <hr />
     <div>
-        <p class="minijianyingbikaishu" style="font-size: 21px;font-weight: 400">
+        <p class="minijianyingbikaishu" style="font-size: 22px;font-weight: 400">
             我同样也可以添加HTML文本。 <a href tooltip-html-unsafe="{{htmlTooltip}}">试试吧，亲！ <i class="ebp-icon fa fa-heart red"></i></a>
         </p>
+    </div>
+    <div class="form-group">
+        <label>动态提示框文本</label>
+        <input type="text" ng-model="dynamicTooltipText" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>动态提示框弹出文本</label>
+        <input type="text" ng-model="dynamicTooltip" class="form-control" />
     </div>
 </div>
