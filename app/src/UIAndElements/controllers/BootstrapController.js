@@ -125,7 +125,7 @@ define(['UIAndElements/module'],function(module){
         ];
         function generateItem(config) {
             angular.isArray(config.deps)?
-                config.deps = config.deps.concat('css!../bower_components/codemirror/theme/cobalt',
+                config.deps = config.deps.concat('css!../bower_components/codemirror/theme/eclipse',
                     '../bower_components/codemirror/mode/xml/xml','../bower_components/codemirror/mode/javascript/javascript'):
                 config.deps = ['css!../bower_components/codemirror/theme/cobalt',
                     '../bower_components/codemirror/mode/xml/xml','../bower_components/codemirror/mode/javascript/javascript'];
@@ -147,14 +147,14 @@ define(['UIAndElements/module'],function(module){
 //            readOnly: 'nocursor',
             lineWrapping : true,
             lineNumbers: false,
-            indentUnit: 2,
-//            theme: 'cobalt',
+            indentUnit: 20,
+            theme: 'eclipse',
             onLoad: function(_editor){
                 // Editor part
                 var _doc = _editor.getDoc();
                 $timeout(function(){
                     _editor.refresh();
-                },500);
+                },0);
 
                 // Options
                 _editor.setOption('firstLineNumber', 1);

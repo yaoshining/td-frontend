@@ -10,6 +10,9 @@
 @import 'grid';
 @import 'alert';
 @import 'modal';
+@import 'table';
+@import 'badges';
+@import 'labels';
 /***************************  login begin  *********************************/
 .login-container {
   width: 375px;
@@ -105,6 +108,9 @@
 }
 .hr.dotted, .hr-dotted {
     border-style: dotted;
+}
+.no-padding {
+  padding: 0px !important;
 }
 .social-or-login {
   margin-top: 4px;

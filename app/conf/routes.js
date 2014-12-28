@@ -50,7 +50,8 @@ define(['angular','conf/modules'],function(angular,modules){
                 }
             },
             modules: {
-                'UIAndElementsModule': modules['UIAndElementsModule.bootstrap']
+                'UIAndElementsModule': modules['UIAndElementsModule.bootstrap'],
+                'ebp.youziku': modules.ebpYzkFontPlugin
             }
         },
         'UIAndElements.treeView': {

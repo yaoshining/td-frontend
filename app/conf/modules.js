@@ -37,6 +37,9 @@ define(function(){
         ],
         'ebpTreePlugin': [
             'plugins/core/ebp-tree'
+        ],
+        'ebpYzkFontPlugin': [
+            'plugins/core/ebp-youziku'
         ]
     }
 });
