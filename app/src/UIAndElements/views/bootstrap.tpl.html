@@ -1,6 +1,6 @@
 <div ng-init="collapsed = true" style="position: fixed;right: -200px;width: 200px;z-index: 3" ng-style="showStyle" ng-mouseleave="showStyle = {right: '-200px'};collapsed = true">
     <div class="list-group">
-        <a href class="list-group-item" ng-click="goToPlugin(item.name)" ng-repeat="item in pluginItems">
+        <a href class="list-group-item minijianyingbikaishu" style="font-size: 16px" ng-click="goToPlugin(item.name)" ng-repeat="item in pluginItems">
             {{item.name}}
         </a>
     </div>
@@ -8,7 +8,7 @@
         <i class="ebp-icon fa" ng-class="{'fa-plus': collapsed,'fa-close': !collapsed}" style="font-size: 25px;color: #ffffff"></i>
     </div>
 </div>
-<div ng-repeat="item in pluginItems" style="display: inline-block;width: 100%;margin-bottom: 10px;">
+<div ng-repeat="item in pluginItems" style="display: inline-block;width: 100%;margin-bottom: 10px;" class="curved_box">
     <div oc-lazy-load="{name: 'UIAndElementsModule',files: item.deps}">
         <a name="{{item.name | lowercase}}"></a>
         <h1>{{item.name}}</h1>

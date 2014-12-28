@@ -121,6 +121,24 @@ define(['UIAndElements/module'],function(module){
                 ],
                 descriptionUrl: 'src/UIAndElements/views/tabs/description.html',
                 javascriptUrl: 'src/UIAndElements/controllers/bootstrap/TabsDemoController.js'
+            }),
+            generateItem({
+                name: 'Timepicker',
+                markupUrl: 'src/UIAndElements/views/timepicker/markup.html',
+                deps: [
+                    'UIAndElements/controllers/bootstrap/TimepickerDemoController'
+                ],
+                descriptionUrl: 'src/UIAndElements/views/timepicker/description.html',
+                javascriptUrl: 'src/UIAndElements/controllers/bootstrap/TimepickerDemoController.js'
+            }),
+            generateItem({
+                name: 'Tooltip',
+                markupUrl: 'src/UIAndElements/views/tooltip/markup.html',
+                deps: [
+                    'UIAndElements/controllers/bootstrap/TooltipDemoController'
+                ],
+                descriptionUrl: 'src/UIAndElements/views/tooltip/description.html',
+                javascriptUrl: 'src/UIAndElements/controllers/bootstrap/TooltipDemoController.js'
             })
         ];
         function generateItem(config) {

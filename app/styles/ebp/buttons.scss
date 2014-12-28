@@ -13,6 +13,14 @@
     vertical-align: middle;
     margin: 0;
     position: relative;
+    &.btn-link {
+        border-width: 0!important;
+        background: transparent none!important;
+        color: #08c!important;
+        text-shadow: none!important;
+        padding: 4px 12px!important;
+        line-height: 20px!important;
+    }
 }
 .btn.active:after {
   display: inline-block;
