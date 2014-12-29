@@ -43,6 +43,99 @@
         <li>
             <code>max-mode</code>(默认值:'year')</i>:设置模式的上限.
         </li>
-        <li>...</li>
+        <li>
+            <code>format-day</code>(默认值:'dd')</i>:日期的格式。
+        </li>
+        <li>
+            <code>format-month</code>(默认值:'MMMM')</i>:月份的格式。
+        </li>
+        <li>
+            <code>format-year</code>(默认值:'yyyy')</i>:在年份范围内的年份的格式。
+        </li>
+        <li>
+            <code>format-day-header</code>(默认值:'EEE')</i>:星期头部中的星期格式。
+        </li>
+        <li>
+            <code>format-day-title</code>(默认值:'MMMM yyyy')</i>:当选择一个日期时标题的显示格式。
+        </li>
+        <li>
+            <code>format-month-title</code>(默认值:'yyyy')</i>:当选择月份时标题的显示格式。
+        </li>
+        <li>
+            <code>year-range</code>(默认值:'20')</i>:在年份选项中展示的年数。
+        </li>
+    </ul>
+</p>
+<p>
+    <h3 class="qingchakaiti bigger-150">关于弹出式选择器的设置</h3>
+    <p>
+        选项可以通过<code>datepicker-options</code>属性以JSON格式来指定。以下<code>datepicker-popup</code>的所有设置，也可以通过<code>datepickerPopupConfig</code>全局的来配置，
+        它们包括：
+    </p>
+    <ul>
+        <li>
+            <code>datepicker-popup</code>(默认值:'yyyy-MM-dd')</i>:日期显示的格式。
+        </li>
+        <li>
+            <code>show-button-bar</code>(默认值:true)</i>:是否在选择器下方显示一个按钮栏。
+        </li>
+        <li>
+            <code>current-text</code>(默认值:'Today')</i>:当前日期按钮中显示的文本。
+        </li>
+        <li>
+            <code>clear-text</code>(默认值:'Clear')</i>:清空按钮中显示的文本。
+        </li>
+        <li>
+            <code>close-text</code>(默认值:'Done')</i>:关闭按钮中显示的文本。
+        </li>
+        <li>
+            <code>close-on-data-selection</code>(默认值:true)</i>:当选择日期之后是否关闭日历。
+        </li>
+        <li>
+            <code>datepicker-append-to-body</code>(默认值:false)</i>:
+            将弹出式日期选择器的元素追加到<code>body</code>之后，取代之前插入到<code>datepicker-popup</code>之后的方式。使用<code>datepickerPopupConfig.appendToBody</code>
+            来全局配置。
+        </li>
+    </ul>
+</p>
+<p>
+    <h3 class="qingchakaiti bigger-150">关于键盘的支持</h3>
+    <p>
+        根据选择器的当前模式，日期可以为日，月或者年。因此，期限视图可以为月，年或多个年的范围。
+    </p>
+    <ul>
+        <li>
+            <code>Left</code></i>:
+        </li>
+        <li>
+            <code>Right</code></i>:
+        </li>
+        <li>
+            <code>Up</code></i>:
+        </li>
+        <li>
+            <code>Down</code></i>:
+        </li>
+        <li>
+            <code>PgUp</code></i>:
+        </li>
+        <li>
+            <code>PgDn</code></i>:
+        </li>
+        <li>
+            <code>Home</code></i>:
+        </li>
+        <li>
+            <code>End</code></i>:
+        </li>
+        <li>
+            <code>Enter / Space</code></i>: 选择日期。
+        </li>
+        <li>
+            <code>Ctrl + Up</code></i>:切换到上一级模式。
+        </li>
+        <li>
+            <code>Esc</code></i>:关闭弹出框，聚焦到输入框上。
+        </li>
     </ul>
 </p>

@@ -12,7 +12,8 @@ requirejs.config({
         'flot': 'vendor/flot/flot',
         'plot': 'vendor/flot/pie',
         'fuelux': '../bower_components/fuelux/dist/js/fuelux.min',
-        'moment': '../bower_components/moment/moment'
+        'moment': '../bower_components/moment/moment',
+        'at-table': '../bower_components/at-table/dist/angular-table'
     },
     shim: {
         'codemirror': {
@@ -21,6 +22,7 @@ requirejs.config({
         },
         'vendor/core/pretty': ['css!styles/vendor/prettify'],
         'plugins/core/ebp-prettify': ['vendor/core/pretty'],
+        'vendor/core/jsmind': ['css!styles/vendor/jsmind'],
         'ui-codemirror': ['codemirror','angular'],
         'flot': ['jquery'],
         'plot': ['flot'],

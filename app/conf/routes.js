@@ -67,6 +67,31 @@ define(['angular','conf/modules'],function(angular,modules){
                 'ebp.tree': modules.ebpTreePlugin
             }
         },
+        'UIAndElements.tables': {
+            url: '/tables',
+            views: {
+                '': {
+                    controller: 'TablesController',
+                    templateUrl: 'src/UIAndElements/views/tables/tables.tpl.html'
+                }
+            },
+            modules: {
+                'UIAndElementsModule': modules['UIAndElementsModule.tables'],
+                'angular-table': ['at-table']
+            }
+        },
+        'UIAndElements.mindMap': {
+            url: '/mindmap',
+            views: {
+                '': {
+                    templateUrl: 'src/UIAndElements/views/mindMap.tpl.html'
+                }
+            },
+            modules: {
+                'UIAndElementsModule': modules['UIAndElementsModule.mindMap'],
+                'ebp.mindmap': modules['ebpJsMindPlugin']
+            }
+        },
         music: {
             url: '/music',
             views: {

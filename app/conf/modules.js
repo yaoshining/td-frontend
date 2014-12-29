@@ -35,11 +35,22 @@ define(function(){
         'UIAndElementsModule.treeView': [
             'UIAndElements/controllers/TreeViewController'
         ],
+        'UIAndElementsModule.tables': [
+            'UIAndElements/controllers/tables/TablesController'
+        ],
+        'UIAndElementsModule.mindMap': [
+            'UIAndElements/controllers/TreeViewController',
+            'vendor/core/jsmind',
+            'css!styles/vendor/jsmind'
+        ],
         'ebpTreePlugin': [
             'plugins/core/ebp-tree'
         ],
         'ebpYzkFontPlugin': [
             'plugins/core/ebp-youziku'
+        ],
+        'ebpJsMindPlugin': [
+            'plugins/charts/mindmap/ebp-jsmind'
         ]
     }
 });

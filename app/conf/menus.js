@@ -11,7 +11,9 @@ define(function(){
         ],
         'UI & Elements': [
             {name: 'Bootstrap',sref: 'UIAndElements.bootstrap'},
-            {name: 'TreeView',sref: 'UIAndElements.treeView'}
+            {name: 'TreeView',sref: 'UIAndElements.treeView'},
+            {name: 'Tables',sref: 'UIAndElements.tables'},
+            {name: 'MindMap',sref: 'UIAndElements.mindMap'}
         ]
     };
 });

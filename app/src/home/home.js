@@ -1,5 +1,5 @@
 'use strict';
-define(['angular', 'angular-ui-router','plugins/sparklines/ebp-sparklines','plugins/flot/ebp-flot'], function(angular) {
+define(['angular', 'angular-ui-router','plugins/charts/sparklines/ebp-sparklines','plugins/charts/flot/ebp-flot'], function(angular) {
     angular.module('homeModule', ['ui.router','ebp.sparklines','easypiechart','ebp.flot']).config(['$stateProvider', function($stateProvider) {
         /*config path for home page*/
     }]).controller('HomeController', [
