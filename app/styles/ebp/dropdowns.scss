@@ -44,6 +44,10 @@
     left: auto;
     right: -5px;
 }
+.dropdown-menu.dropdown-closer.dropdown-menu-right {
+    left: auto;
+    right: -10px;
+}
 .dropdown-hover {
     position: relative;
     &::before {

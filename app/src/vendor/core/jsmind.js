@@ -1,13 +1,13 @@
 /*
  * Released under BSD License
  * Copyright (c) 2014 hizzgdev@163.com
- * 
+ *
  * Project Home:
  *   https://github.com/hizzgdev/jsmind/
  */
 
 (function($w){
-    "use strict";       
+    "use strict";
     // set 'jsMind' as the library name.
     // __name__ should be a const value, Never try to change it easily.
     var __name__ = 'jsMind';
@@ -120,7 +120,7 @@
         }else{
             r = 0;
         }
-        //_console.debug(i1+' <> '+i2+'  =  '+r);
+        //_console.log(i1+' <> '+i2+'  =  '+r);
         return r;
     };
 
@@ -159,7 +159,7 @@
             }
             var nodeindex = idx || -1;
             if(!!parent_node){
-                //_console.debug(parent_node);
+                //_console.log(parent_node);
                 var node = null;
                 if(parent_node.isroot){
                     var d = jm.direction.right;
@@ -568,7 +568,7 @@
                 for(var i=0;i<ci;i++){
                     df._array_node(node.children[i], node_array);
                 }
-            },
+            }
         },
 
         freemind:{
@@ -619,7 +619,7 @@
                 }else{ // Internet Explorer
                     xml_doc = new ActiveXObject("Microsoft.XMLDOM");
                     xml_doc.async = false;
-                    xml_doc.loadXML(xml); 
+                    xml_doc.loadXML(xml);
                 }
                 return xml_doc;
             },
@@ -660,7 +660,7 @@
                     var topic_child = null;
                     for(var i=0;i<topic_children.length;i++){
                         topic_child = topic_children[i];
-                        //_console.debug(topic_child.tagName);
+                        //_console.log(topic_child.tagName);
                         if(topic_child.nodeType == 1 && topic_child.tagName === 'richcontent'){
                             node_topic = topic_child.textContent;
                             break;
@@ -673,7 +673,7 @@
                 if(!!node_position){
                     node_direction = node_position=='left'?jm.direction.left:jm.direction.right;
                 }
-                //_console.debug(node_position +':'+ node_direction);
+                //_console.log(node_position +':'+ node_direction);
                 if(!!parent_id){
                     mind.add_node(parent_id, node_id, node_topic, node_data, null, node_direction);
                 }else{
@@ -761,7 +761,7 @@
                 var a = jm.util.ajax;
                 var p = null;
                 var tmp_param = [];
-                for(k in param){
+                for(var k in param){
                     tmp_param.push(a._eurl(k)+'='+a._eurl(param[k]));
                 }
                 if(tmp_param.length>0){
@@ -948,7 +948,7 @@
                 hmargin:opts.view.hmargin,
                 vmargin:opts.view.vmargin
             };
-            // create instance of function provider 
+            // create instance of function provider
             this.data = new jm.data_provider(this);
             this.layout = new jm.layout_provider(this, opts_layout);
             this.view = new jm.view_provider(this, opts_view);
@@ -1085,17 +1085,17 @@
                 _console.error('data.load error');
                 return;
             }else{
-                _console.debug('data.load ok');
+                _console.log('data.load ok');
             }
 
             this.view.load();
-            _console.debug('view.load ok');
+            _console.log('view.load ok');
 
             this.layout.layout();
-            _console.debug('layout.layout ok');
+            _console.log('layout.layout ok');
 
             this.view.show();
-            _console.debug('view.show ok');
+            _console.log('view.show ok');
         },
 
         show : function(mind){
@@ -1329,11 +1329,11 @@
 
     jm.data_provider.prototype={
         init:function(){
-            _console.debug('data.init');
+            _console.log('data.init');
         },
 
         reset:function(){
-            _console.debug('data.reset');
+            _console.log('data.reset');
         },
 
         load:function(mind_data){
@@ -1389,14 +1389,14 @@
 
     jm.layout_provider.prototype={
         init:function(){
-            _console.debug('layout.init');
+            _console.log('layout.init');
         },
         reset:function(){
-            _console.debug('layout.reset');
+            _console.log('layout.reset');
             this.bounds = {n:0,s:0,w:0,e:0};
         },
         layout:function(){
-            _console.debug('layout.layout');
+            _console.log('layout.layout');
             this.layout_direction();
             this.layout_offset();
         },
@@ -1407,7 +1407,7 @@
 
         _layout_direction_root:function(){
             var node = this.jm.mind.root;
-            // _console.debug(node);
+            // _console.log(node);
             var layout_data = null;
             if('layout' in node._data){
                 layout_data = node._data.layout;
@@ -1493,7 +1493,7 @@
             layout_data.outer_height_right = this._layout_offset_subnodes(right_nodes);
             this.bounds.e=node._data.view.width/2;
             this.bounds.w=0-this.bounds.e;
-            //_console.debug(this.bounds.w);
+            //_console.log(this.bounds.w);
             this.bounds.n=0;
             this.bounds.s = Math.max(layout_data.outer_height_left,layout_data.outer_height_right);
         },
@@ -1539,7 +1539,7 @@
             while(i--){
                 node = nodes[i];
                 node._data.layout.offset_y += middle_height;
-                //_console.debug(node._data.layout.offset_y);
+                //_console.log(node._data.layout.offset_y);
             }
             return total_height;
         },
@@ -1581,8 +1581,8 @@
             while(i--){
                 node = nodes[i];
                 node._data.layout.offset_y += middle_height;
-                //_console.debug(node.topic);
-                //_console.debug(node._data.layout.offset_y);
+                //_console.log(node.topic);
+                //_console.log(node._data.layout.offset_y);
             }
             return total_height;
         },
@@ -1613,11 +1613,11 @@
         get_node_point:function(node){
             var view_data = node._data.view;
             var offset_p = this.get_node_offset(node);
-            //_console.debug(offset_p);
+            //_console.log(offset_p);
             var p = {};
             p.x = offset_p.x + view_data.width*(node._data.layout.direction-1)/2;
             p.y = offset_p.y-view_data.height/2;
-            //_console.debug(p);
+            //_console.log(p);
             return p;
         },
 
@@ -1644,8 +1644,8 @@
                     var offset_p = this.get_node_offset(node);
                     pout_cache.x = offset_p.x + (view_data.width+this.opts.pspace)*node._data.layout.direction;
                     pout_cache.y = offset_p.y;
-                    //_console.debug('pout');
-                    //_console.debug(pout_cache);
+                    //_console.log('pout');
+                    //_console.log(pout_cache);
                 }
             }
             return pout_cache;
@@ -1670,7 +1670,7 @@
             for(var nodeid in nodes){
                 node = nodes[nodeid];
                 pout = this.get_node_point_out(node);
-                //_console.debug(pout.x);
+                //_console.log(pout.x);
                 if(pout.x > this.bounds.e){this.bounds.e = pout.x;}
                 if(pout.x < this.bounds.w){this.bounds.w = pout.x;}
             }
@@ -1697,21 +1697,21 @@
         },
 
         expand_node:function(node){
-            //_console.debug('expand');
+            //_console.log('expand');
             node._data.layout.isexpand = true;
             this.part_layout(node);
             this.set_visible(node.children,true);
         },
 
         collapse_node:function(node){
-            //_console.debug('collapse');
+            //_console.log('collapse');
             node._data.layout.isexpand = false;
             this.part_layout(node);
             this.set_visible(node.children,false);
         },
 
         part_layout:function(node){
-            //_console.debug('part_layout');
+            //_console.log('part_layout');
             var root = this.jm.mind.root;
             if(!!root){
                 var root_layout_data = root._data.layout;
@@ -1751,7 +1751,7 @@
                 return true;
             }
         },
-        
+
         is_visible:function(node){
             var layout_data = node._data.layout;
             if(('visible' in layout_data) && !layout_data.visible){
@@ -1782,7 +1782,7 @@
 
     jm.view_provider.prototype={
         init:function(){
-            _console.debug('view.init');
+            _console.log('view.init');
 
             this.container = $g(this.opts.container);
             if(!this.container){
@@ -1814,7 +1814,7 @@
 
             this.init_canvas();
         },
-            
+
         event_bind:function(obj,fn_mouseover,fn_mouseout,fn_click,fn_dblclick){
             if(!!fn_mouseover){
                 jm.util.dom.add_event(this.e_nodes,'mouseover',function(e){fn_mouseover.call(obj,e);});
@@ -1843,7 +1843,7 @@
         },
 
         reset:function(){
-            _console.debug('view.reset');
+            _console.log('view.reset');
             this.selected_node = null;
             this.clear_lines();
             this.clear_nodes();
@@ -1860,7 +1860,7 @@
         },
 
         load:function(){
-            _console.debug('view.load');
+            _console.log('view.load');
             this.init_nodes();
         },
 
@@ -2052,7 +2052,7 @@
         },
 
         show:function(){
-            _console.debug('view.show');
+            _console.log('view.show');
             this.expand_size();
             this._show();
             this._center_root();

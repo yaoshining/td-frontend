@@ -37,6 +37,7 @@ requirejs.config({
         'ui-bootstrap-tpls': '../bower_components/angular-bootstrap/ui-bootstrap-tpls',
         /*require jquery*/
         'jquery': '../bower_components/jquery/dist/jquery',
+        'kreate': '../bower_components/kreate/dist/kreate.min',
         'jquery-ui': '../bower_components/jquery-ui/jquery-ui',
         'ui-autocomplete': '../bower_components/ui-autocomplete/autocomplete',
         /*require bootstrap.js to make bootstrap components work*/
@@ -62,6 +63,7 @@ requirejs.config({
         'ui-bootstrap-tpls': ['angular'],
         'bootstrap': ['jquery'],
         'bootstrap-typeahead': ['bootstrap'],
+        'kreate': ['jquery'],
         'jquery-ui': ['jquery'],
         'ui-autocomplete': ['jquery-ui','angular'],
         'ng-file-upload': ['angular']

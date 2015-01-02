@@ -28,23 +28,23 @@
         border-color: #2E8965;
       }
     }
-}
-.widget-header-small {
-  min-height: 31px;
-  padding-left: 10px;
+    &.fullscreen {
+        position: fixed;
+        margin: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #FFF;
+        border-width: 3px;
+        z-index: 1040!important;
+        &:not([class*=widget-color-]) {
+            border-color: #AAA;
+        }
+    }
 }
 .widget-box[class*="widget-color-"] > .widget-header {
   color: #FFF;
-}
-.widget-header-small {
-    min-height: 31px;
-    padding-left: 10px;
-    &>.widget-title {
-        line-height: 30px;
-    }
-    &>.widget-toolbar {
-        line-height: 35px;
-    }
 }
 .widget-header {
     -webkit-box-sizing: content-box;
@@ -82,6 +82,26 @@
         filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
     }
 }
+.widget-header-small {
+    min-height: 31px;
+    padding-left: 10px;
+    &>.widget-title {
+        line-height: 30px;
+    }
+    &>.widget-toolbar {
+        line-height: 29px;
+    }
+}
+.widget-header-large {
+    min-height: 49px;
+    padding-left: 18px;
+    &>.widget-title {
+        line-height: 48px;
+    }
+    &>.widget-toolbar {
+        line-height: 48px;
+    }
+}
 .widget-toolbar {
     display: inline-block;
     padding: 0 10px;
@@ -90,6 +110,11 @@
     position: relative;
     &.no-border:before {
       display: none;
+    }
+    .progress {
+        vertical-align: middle;
+        display: inline-block;
+        margin: 0;
     }
     &:before {
       display: inline-block;
@@ -107,6 +132,46 @@
       border-image: none;
       border-width: 0px 1px 0px 0px;
     }
+    &>.widget-menu {
+        display: inline-block;
+        position: relative;
+    }
+    & label {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0;
+    }
+}
+.widget-toolbar>a, .widget-toolbar>.widget-menu>a {
+    font-size: 14px;
+    margin: 0 1px;
+    display: inline-block;
+    padding: 0;
+    line-height: 24px;
+}
+.widget-toolbar>a[data-action], .widget-toolbar>.widget-menu>a[data-action] {
+    -webkit-transition: transform .1s;
+    -o-transition: transform .1s;
+    transition: transform .1s;
+    &:hover {
+        -moz-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+.widget-box>.widget-header>.widget-toolbar>[data-action=settings], .widget-color-dark>.widget-header>.widget-toolbar>[data-action=settings], .widget-box>.widget-header>.widget-toolbar>.widget-menu>[data-action=settings], .widget-color-dark>.widget-header>.widget-toolbar>.widget-menu>[data-action=settings] {
+    color: #99CADB;
+}
+.widget-box>.widget-header>.widget-toolbar>[data-action=reload], .widget-color-dark>.widget-header>.widget-toolbar>[data-action=reload], .widget-box>.widget-header>.widget-toolbar>.widget-menu>[data-action=reload], .widget-color-dark>.widget-header>.widget-toolbar>.widget-menu>[data-action=reload] {
+    color: #ACD392;
+}
+.widget-box>.widget-header>.widget-toolbar>[data-action=collapse], .widget-color-dark>.widget-header>.widget-toolbar>[data-action=collapse], .widget-box>.widget-header>.widget-toolbar>.widget-menu>[data-action=collapse], .widget-color-dark>.widget-header>.widget-toolbar>.widget-menu>[data-action=collapse] {
+    color: #AAA;
+}
+.widget-box>.widget-header>.widget-toolbar>[data-action=close], .widget-color-dark>.widget-header>.widget-toolbar>[data-action=close], .widget-box>.widget-header>.widget-toolbar>.widget-menu>[data-action=close], .widget-color-dark>.widget-header>.widget-toolbar>.widget-menu>[data-action=close] {
+    color: #E09E96;
 }
 .widget-main {
     padding: 12px;
@@ -114,8 +179,14 @@
     &.padding-4 {
       padding: 4px;
     }
+    &.padding-6 {
+        padding: 6px;
+    }
     &.padding-8 {
       padding: 8px;
+    }
+    &.padding-16 {
+        padding: 16px;
     }
     &.no-padding{
       .table {
@@ -138,6 +209,9 @@
       }
     }
   }
+    .alert:last-child {
+        margin-bottom: 0;
+    }
 }
 .transparent > .widget-body .widget-main .table-bordered > thead > tr > th:last-child,
 .widget-main.no-padding .table-bordered > thead > tr > th:last-child,
@@ -147,4 +221,56 @@
 .widget-main.no-padding .table-bordered > tfoot > tr > td:last-child {
   border-right-width: 0px !important;
 }
-
+.widget-placeholder {
+    border: 2px dashed #D9D9D9;
+}
+.widget-color-blue {
+    border-color: #307ecc;
+    &>.widget-header {
+        background: #307ecc;
+        border-color: #307ecc;
+    }
+}
+.widget-color-orange {
+    border-color: #e8b10d;
+    &>.widget-header {
+        color: #855d10!important;
+        border-color: #e8b10d;
+        background: #ffc657;
+    }
+}
+.widget-color-orange>.widget-header>.widget-toolbar>[data-action=settings], .widget-color-orange>.widget-header>.widget-toolbar>.widget-menu>[data-action=settings] {
+    color: #559AAB;
+}
+.widget-color-orange>.widget-header>.widget-toolbar>[data-action=reload], .widget-color-orange>.widget-header>.widget-toolbar>.widget-menu>[data-action=reload] {
+    color: #7CA362;
+}
+.widget-color-orange>.widget-header>.widget-toolbar>[data-action=collapse], .widget-color-orange>.widget-header>.widget-toolbar>.widget-menu>[data-action=collapse] {
+    color: #777;
+}
+.widget-color-orange>.widget-header>.widget-toolbar>[data-action=close], .widget-color-orange>.widget-header>.widget-toolbar>.widget-menu>[data-action=close] {
+    color: #A05656;
+}
+.widget-color-dark {
+    border-color: #5a5a5a;
+    &>.widget-header {
+        border-color: #666;
+        background: #404040;
+        &>.widget-toolbar:before {
+            border-color: #222;
+            box-shadow: -1px 0 0 rgba(255,255,255,.2),inset 1px 0 0 rgba(255,255,255,.1);
+        }
+    }
+}
+.widget-toolbox:first-child {
+    padding: 2px;
+    border-bottom: 1px solid #CCC;
+    &.toolbox-vertical {
+        border-bottom-width: 0;
+        border-right: 1px solid #D9D9D9;
+        display: table-cell;
+        padding: 6px 4px;
+        vertical-align: top;
+        width: 1px;
+    }
+}

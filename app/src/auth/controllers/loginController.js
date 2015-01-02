@@ -24,7 +24,10 @@ define(['auth/module'],function(authModule){
                         if(angular.isObject(data)){
                             authService.currentUser = data.principal;
                         }
-                        $location.path('/');
+                        $location.go('home',{},{reload: true});
+                    },
+                    error: function(){
+                        alert(1);
                     }
                 });
 //                $.post('/oa/auth/login',{

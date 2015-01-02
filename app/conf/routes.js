@@ -34,7 +34,7 @@ define(['angular','conf/modules'],function(angular,modules){
             url: '/ui',
             views: {
                 '': {
-                    template: "<div ui-view style='position: relative'></div>"
+                    template: "<div ui-view class='fade-in-up' style='position: relative'></div>"
                 }
             },
             modules: {
@@ -80,6 +80,19 @@ define(['angular','conf/modules'],function(angular,modules){
                 'angular-table': ['at-table']
             }
         },
+        'UIAndElements.nestable': {
+            url: '/nestable',
+            views: {
+                '': {
+                    controller: 'NestableController',
+                    templateUrl: 'src/UIAndElements/views/list/nestable.html'
+                }
+            },
+            modules: {
+                'UIAndElementsModule': modules['UIAndElementsModule.nestable'],
+                'ng-nestable': modules.ngNestable
+            }
+        },
         'UIAndElements.mindMap': {
             url: '/mindmap',
             views: {
@@ -92,20 +105,76 @@ define(['angular','conf/modules'],function(angular,modules){
                 'ebp.mindmap': modules['ebpJsMindPlugin']
             }
         },
+        widgetsDemo: {
+            url: '/widgets',
+            views: {
+                '': {
+                    controller: 'WidgetsDemoController',
+                    templateUrl: 'src/widgets/views/widgets.tpl.html'
+                }
+            },
+            modules: {
+                'widgetsDemoModule': modules.widgetsDemoModule,
+                'ui.sortable': ['ui-sortable'],
+                'angular-table': ['at-table']
+            }
+        },
         music: {
             url: '/music',
             views: {
-                '': {
-                    templateUrl: 'src/roses/roses.html'
+                'main.content': {
+                    templateUrl: 'src/musicyao/views/main.html'
+                },
+                'sidebar': {
+                    templateUrl: 'src/musicyao/views/sidebar.html'
+                },
+                'navbar': {
+                    templateUrl: 'src/musicyao/views/navbar.html'
                 }
+            },
+            modules: {
+                'musicYaoModule': modules.musicYaoModule,
+                'ebp.stickUp': ['plugins/core/ebp-stickup'],
+                'com.2fdevs.videogular': ['videogular'],
+                'com.2fdevs.videogular.plugins.controls': ['videogular-controls'],
+                'com.2fdevs.videogular.plugins.overlayplay': ['videogular-overlay-play'],
+                'com.2fdevs.videogular.plugins.buffering': ['videogular-buffering'],
+                'com.2fdevs.videogular.plugins.poster': ['videogular-poster']
             }
         },
-        'music.test': {
-            url: '/test',
+        'music.home': {
+            url: '/home',
             views: {
                 '': {
-                    template: 'rettre'
+                    controller: 'MusicHomeController',
+                    templateUrl: 'src/musicyao/views/recommendation.html'
                 }
+            },
+            modules: {
+                'musicYaoModule': modules['musicYaoModule_home']
+            }
+        },
+        'music.mtv': {
+            url: '/mtv',
+            views: {
+                '': {
+                    controller: 'MTVController',
+                    templateUrl: 'src/musicyao/views/mtv.html'
+                }
+            },
+            modules: {
+                'musicYaoModule': modules['musicYaoModule_mtv']
+            }
+        },
+        'music.mtvdetail': {
+            url: '/mtvdetail',
+            views: {
+                '': {
+                    templateUrl: 'src/musicyao/views/mtvdetail.html'
+                }
+            },
+            modules: {
+                'musicYaoModule': ['musicyao/controllers/VideoPlayerController']
             }
         }
     }

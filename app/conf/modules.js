@@ -38,10 +38,17 @@ define(function(){
         'UIAndElementsModule.tables': [
             'UIAndElements/controllers/tables/TablesController'
         ],
+        'UIAndElementsModule.nestable': [
+            'UIAndElements/controllers/list/NestableController'
+        ],
         'UIAndElementsModule.mindMap': [
             'UIAndElements/controllers/TreeViewController',
             'vendor/core/jsmind',
             'css!styles/vendor/jsmind'
+        ],
+        'widgetsDemoModule' : [
+            'widgets/module',
+            'widgets/controllers/WidgetsDemoController'
         ],
         'ebpTreePlugin': [
             'plugins/core/ebp-tree'
@@ -51,6 +58,21 @@ define(function(){
         ],
         'ebpJsMindPlugin': [
             'plugins/charts/mindmap/ebp-jsmind'
+        ],
+        'ngNestable': [
+            'ng-nestable'
+        ],
+        'musicYaoModule': [
+            'musicyao/module',
+            'musicyao/controllers/MusicPlayerController',
+            'musicyao/repositories/MusicYao',
+            'css!styles/ebp/musicyao'
+        ],
+        'musicYaoModule_home': [
+            'musicyao/controllers/MusicHomeController'
+        ],
+        'musicYaoModule_mtv': [
+            'musicyao/controllers/MTVController'
         ]
     }
 });

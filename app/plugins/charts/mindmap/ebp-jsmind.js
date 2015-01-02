@@ -82,7 +82,7 @@
                             editable:true,
                             theme:'primary'
                         };
-                        if(jsMind.current == element.data('_jm')){
+                        if(jsMind.current){
                             jsMind.current = null;
                         }
                         var jm = jsMind.show(options,mind);

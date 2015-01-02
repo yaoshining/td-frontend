@@ -14,6 +14,8 @@
 @import 'badges';
 @import 'labels';
 @import 'widgets';
+@import 'lists';
+@import 'animations';
 /***************************  login begin  *********************************/
 .login-container {
   width: 375px;
@@ -83,6 +85,16 @@
   overflow: hidden;
   margin: 12px 0;
   margin: 6px 0 5px;
+}
+.space-24 {
+    max-height: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    margin: 12px 0;
+    margin: 24px 0 23px;
+}
+.middle {
+    vertical-align: middle;
 }
 .hr {
     display: block;

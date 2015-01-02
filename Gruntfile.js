@@ -89,6 +89,12 @@ module.exports = function(grunt) {
                         port: '8080',
                         https: false,
                         changeOrigin: true
+                    }, {
+                        context: '/MusicYao',
+                        host: '114.215.109.39',
+                        port: '7001',
+                        https: false,
+                        changeOrigin: true
                     }
                 ]
             },
@@ -393,7 +399,6 @@ module.exports = function(grunt) {
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dist %>',
                     src: [
-                        'conf/**',
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.webp',
@@ -402,7 +407,10 @@ module.exports = function(grunt) {
                         'bower_components/sass-bootstrap/fonts/*.*',
                         'bower_components/font-awesome/fonts/*.*',
                         'bower_components/tinymce/*',
-                        'bower_components/require-css/*'
+                        'bower_components/require-css/*',
+                        'bower_components/nprogress/*',
+                        'bower_components/stickUp/*',
+                        'bower_components/videogular*/*'
                     ]
                 },{
                     expand: true,
@@ -423,6 +431,18 @@ module.exports = function(grunt) {
                 cwd: '<%= yeoman.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
+            },
+            config: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: '<%= yeoman.dist %>',
+                    src: [
+                        'conf/**',
+                        'plugins/**'
+                    ]
+                }]
             }
         },
 
@@ -522,6 +542,7 @@ module.exports = function(grunt) {
         'concurrent:dist',
         'autoprefixer',
         'cssmin',
+        'copy:config',
         'requirejs',
         'clean:afterBuild',
         'copy:dist',
