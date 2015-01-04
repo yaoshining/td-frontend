@@ -8,7 +8,6 @@ define(['auth/module'],function(authModule){
             $scope.login = function(){
                 var username = $scope.username;
                 var password = $scope.password;
-                console.log(username);
                 $.ajax({
                     url: '/oa/auth/login',
                     data: {
@@ -25,9 +24,6 @@ define(['auth/module'],function(authModule){
                             authService.currentUser = data.principal;
                         }
                         $location.go('home',{},{reload: true});
-                    },
-                    error: function(){
-                        alert(1);
                     }
                 });
 //                $.post('/oa/auth/login',{

@@ -60,7 +60,7 @@ define(['angular','angular-ui-router','angular-cookies'],function(angular){
                             authService.currentUser = data.principal;
                         }
                         $cookieStore.put('currentUser',authService.currentUser);
-                        $location.path('/');
+                        window.location.href = '/';
                         $scope.$apply();
                     }
                 });

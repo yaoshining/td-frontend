@@ -329,6 +329,7 @@ require([
                         paths: []
                     }
                 }]).run(['$ocLazyLoad','$rootScope',function($ocLazyLoad,$rootScope){
+                    window.NProgress.inc();
                     setTimeout(function(){
                         window.NProgress.done(true);
                         $rootScope.isAppLoaded = true;
