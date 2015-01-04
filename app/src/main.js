@@ -181,6 +181,7 @@ require([
     'angular-ui-router',
     'angular-cookies',
     'angular-sanitize',
+    'tinycon',
     'oclazyload',
     'ui-bootstrap-tpls',
     'bootstrap'
@@ -196,6 +197,7 @@ require([
             'auth/module',
         ],function(NProgress,routes,menus){
             /*App Module*/
+            document.getElementById('loader-wrapper').style.backgroundColor = '#222';
             angular.element(document).ready(function () {
                 /*smart works go here*/
                 var $html = angular.element('html');
@@ -327,16 +329,31 @@ require([
                         paths: []
                     }
                 }]).run(['$ocLazyLoad','$rootScope',function($ocLazyLoad,$rootScope){
-                    NProgress.configure({
-                        showSpinner: false,
-                        trickleRate: 0.02, trickleSpeed: 50
-                    });
+                    setTimeout(function(){
+                        window.NProgress.done(true);
+                        $rootScope.isAppLoaded = true;
+                        $rootScope.$apply();
+                    },2000);
                     $rootScope.$on('$stateChangeStart',function(){
-                        NProgress.start();
+                        $rootScope.isAppLoaded && NProgress.start();
                     });
                     $rootScope.$on('$viewContentLoaded',function(){
-                        NProgress.done(true);
+                        $rootScope.isAppLoaded && NProgress.done(true);
                     });
+                    Tinycon.setOptions({
+                        width: 7,
+                        height: 9,
+                        font: '10px \'Strict Thin\' lighter',
+                        colour: '#ffff00',
+                        background: '#2e8965',
+                        fallback: true
+                    });
+                    var count = 0;
+                    setInterval(function(){
+                        ++count;
+                        Tinycon.setBubble(count);
+
+                    }, 1000);
                 }]);
 
                 /*bootstrap model*/

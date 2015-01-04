@@ -46,7 +46,8 @@ requirejs.config({
         /*--insert code tag--do not remove*/
         'underscore': '../bower_components/underscore/underscore',
         'oclazyload': '../bower_components/oclazyload/dist/ocLazyLoad',
-        'tinymce': '../bower_components/tinymce/tinymce.min'
+        'tinymce': '../bower_components/tinymce/tinymce.min',
+        'tinycon': '../bower_components/tinycon/tinycon.min'
     },
     shim: {
         'angular': { exports: 'angular', deps: ['jquery','underscore','ng-file-upload-shim'] },

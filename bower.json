@@ -37,6 +37,7 @@
     "angular-ui-sortable": "~0.13.1",
     "nprogress": "~0.1.6",
     "stickUp": "~0.5.7",
-    "headroom.js": "~0.7.0"
+    "headroom.js": "~0.7.0",
+    "tinycon": "~0.6.3"
   }
 }

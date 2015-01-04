@@ -11,7 +11,7 @@
 <div ng-repeat="item in pluginItems" style="display: inline-block;width: 100%;margin-bottom: 10px;" class="curved_box">
     <div oc-lazy-load="{name: 'UIAndElementsModule',files: item.deps}">
         <a name="{{item.name | lowercase}}"></a>
-        <h1>{{item.name}}</h1>
+        <h1 class="printify">{{item.name}}</h1>
         <div class="hr hr32"></div>
         <div class="col-md-6 col-xs-6" ng-include="item.markupUrl">
 
