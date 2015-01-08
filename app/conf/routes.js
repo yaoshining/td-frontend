@@ -93,6 +93,19 @@ define(['angular','conf/modules'],function(angular,modules){
                 'ng-nestable': modules.ngNestable
             }
         },
+        'UIAndElements.calendar': {
+            url: '/calendar',
+            views: {
+                '': {
+                    controller: 'CalendarDemoController',
+                    templateUrl: 'src/UIAndElements/views/calendar/calendar.tpl.html'
+                }
+            },
+            modules: {
+                'UIAndElementsModule': modules['UIAndElementsModule.calendar'],
+                'ui.calendar': ['ui-calendar']
+            }
+        },
         'UIAndElements.mindMap': {
             url: '/mindmap',
             views: {
@@ -175,6 +188,22 @@ define(['angular','conf/modules'],function(angular,modules){
             },
             modules: {
                 'musicYaoModule': ['musicyao/controllers/VideoPlayerController']
+            }
+        },
+        'worktile': {
+            url: '/worktile',
+            views: {
+                'main.content': {
+                    templateUrl: 'src/worktile/views/worktile.main.tpl.html'
+                },
+                'sidebar': {
+                    controller: 'WorktileSidebarController',
+                    templateUrl: 'src/home/sidebar.tpl.html'
+                }
+            },
+            modules: {
+                'worktileModule': modules.worktile,
+                'ui.sortable': ['ui-sortable']
             }
         }
     }

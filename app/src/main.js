@@ -334,7 +334,7 @@ require([
                         window.NProgress.done(true);
                         $rootScope.isAppLoaded = true;
                         $rootScope.$apply();
-                    },2000);
+                    },0);
                     $rootScope.$on('$stateChangeStart',function(){
                         $rootScope.isAppLoaded && NProgress.start();
                     });

@@ -1,27 +1,28 @@
+@import "viables";
 .purple {
-  color: #a069c3!important;
+  color: $purple!important;
 }
 .green {
-  color: #69aa46!important;
+  color: $green!important;
 }
 .red {
-  color: #dd5a43!important;
+  color: $red!important;
 }
 .white {
-  color: #fff!important;
+  color: $white!important;
 }
 .light-blue {
-  color: #93cbf9!important;
+  color: $light-blue!important;
 }
 .blue {
-  color: #478fca!important;
+  color: $blue!important;
 }
 .grey {
-    color: #777!important;
+    color: $gray!important;
 }
 .orange {
-  color: #FF892A !important;
+  color: $orange !important;
 }
 .orange2 {
-    color: #feb902!important;
+    color: $orange2!important;
 }

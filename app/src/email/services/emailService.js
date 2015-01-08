@@ -13,7 +13,14 @@ define(['email/module'],function(emailModule){
                         callback();
                     }
                 });
-			}
+            },
+            remove: function(email,callback){
+                emailRepo.remove({emailId: email.id},function(){
+                    if($.isFunction(callback)){
+                        callback();
+                    }
+                });
+            }
 		}
 	}]);
 });

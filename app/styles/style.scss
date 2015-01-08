@@ -4,6 +4,7 @@ $fa-font-path: '../bower_components/font-awesome/fonts';
 $icon-font-path: '../bower_components/sass-bootstrap/fonts/';
 @import '../bower_components/sass-bootstrap/lib/bootstrap';
 @import 'custom_mixins.scss';
+@import 'ebp/viables';
 @import 'ebp/core';
 /* This is your main css file */
 html,body {

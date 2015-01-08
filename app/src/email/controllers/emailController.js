@@ -30,6 +30,13 @@ define(['angular','email/module','users/module','auth/module'],function(angular,
             $sce,
             authService
         ){
+            $scope.multiDelete = function(){
+                angular.forEach($scope.emails,function(email,index){
+                    email.checked && emailService.remove(email,function(){
+                        $scope.emails.splice(index,1);
+                    });
+                });
+            };
 			$scope.emails = emailService.getEmails(authService.currentUser);
 			var viewName = $scope.viewName = $state.params.emailView;
             if(!viewName){

@@ -49,7 +49,7 @@
     <tbody>
     <tr ng-repeat="email in emails" ng-click="showEmailDetails(email)">
         <td>
-            <input type="checkbox" ng-click="$event.stopPropagation()" />
+            <input type="checkbox" ng-click="$event.stopPropagation()" ng-model="email.checked" />{{email.checked}}
         </td>
         <td>
             <span class="glyphicon glyphicon-envelope"></span>
@@ -67,7 +67,7 @@
     </tbody>
 </table>
 <div class="email-toolbar">
-    <button class="btn btn-xs btn-default" translate="DELETE"></button>
+    <button class="btn btn-xs btn-default" translate="DELETE" ng-click="multiDelete()"></button>
     <button class="btn btn-xs btn-default" translate="DELETE_PERMANENTLY"></button>
     <button class="btn btn-xs btn-default" translate="FORWARD"></button>
     <button class="btn btn-xs btn-default" translate="MARK_ALL_AS_READ"></button>

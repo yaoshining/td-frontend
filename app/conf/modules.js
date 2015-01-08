@@ -41,6 +41,9 @@ define(function(){
         'UIAndElementsModule.nestable': [
             'UIAndElements/controllers/list/NestableController'
         ],
+        'UIAndElementsModule.calendar': [
+            'UIAndElements/controllers/calendar/CalendarDemoController'
+        ],
         'UIAndElementsModule.mindMap': [
             'UIAndElements/controllers/TreeViewController',
             'vendor/core/jsmind',
@@ -73,6 +76,12 @@ define(function(){
         ],
         'musicYaoModule_mtv': [
             'musicyao/controllers/MTVController'
+        ],
+        'worktile': [
+            'css!styles/ebp/worktile',
+            'worktile/module',
+            'worktile/controllers/SidebarController',
+            'worktile/controllers/WorktileController'
         ]
     }
 });
