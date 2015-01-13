@@ -44,6 +44,11 @@ define(function(){
         'UIAndElementsModule.calendar': [
             'UIAndElements/controllers/calendar/CalendarDemoController'
         ],
+        'UIAndElementsModule.maps': [
+            'UIAndElements/controllers/maps/MapDemoController',
+            'jvectormap-world',
+            'jvectormap-cn'
+        ],
         'UIAndElementsModule.mindMap': [
             'UIAndElements/controllers/TreeViewController',
             'vendor/core/jsmind',
@@ -82,6 +87,17 @@ define(function(){
             'worktile/module',
             'worktile/controllers/SidebarController',
             'worktile/controllers/WorktileController'
+        ],
+        'mediaModule' : [
+            'media/module'
+        ],
+        'mediaModule.audioPlayer': [
+            'media/controllers/audio/AudioPlayerDemoController',
+            'jquery-knob'
+        ],
+        'myModule': [
+            'email/module2',
+            'email/controllers/MyController'
         ]
     }
 });

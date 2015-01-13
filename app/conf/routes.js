@@ -106,6 +106,19 @@ define(['angular','conf/modules'],function(angular,modules){
                 'ui.calendar': ['ui-calendar']
             }
         },
+        'UIAndElements.maps': {
+            url: '/maps',
+            views: {
+                '': {
+                    controller: 'MapDemoController',
+                    templateUrl: 'src/UIAndElements/views/maps/maps.tpl.html'
+                }
+            },
+            modules: {
+                'UIAndElementsModule': modules['UIAndElementsModule.maps'],
+                'ebp.jq': ['plugins/core/ebp-jq']
+            }
+        },
         'UIAndElements.mindMap': {
             url: '/mindmap',
             views: {
@@ -203,7 +216,43 @@ define(['angular','conf/modules'],function(angular,modules){
             },
             modules: {
                 'worktileModule': modules.worktile,
-                'ui.sortable': ['ui-sortable']
+                'ui.sortable': ['ui-sortable'],
+                'ebp.jq': ['plugins/core/ebp-jq']
+            }
+        },
+        'mediaDemo': {
+            url: '/media',
+            views: {
+                '': {
+                    template: "<div ui-view class='fade-in-up' style='position: relative'></div>"
+                }
+            },
+            modules: {
+                'mediaModule': modules.mediaModule,
+                'ebp.jq': ['plugins/core/ebp-jq']
+            }
+        },
+        'mediaDemo.audioPlayer': {
+            url: '/audio',
+            views: {
+                '': {
+                    controller: 'AudioPlayerDemoController',
+                    templateUrl: 'src/media/views/audio/players.tpl.html'
+                }
+            },
+            modules: {
+                'mediaModule': modules['mediaModule.audioPlayer']
+            }
+        },
+        'myState': {
+            url: '/myState',
+            views: {
+                '': {
+                    template: ''
+                }
+            },
+            modules: {
+                'myModule': modules['myModule']
             }
         }
     }

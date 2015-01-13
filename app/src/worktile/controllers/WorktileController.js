@@ -1,7 +1,7 @@
 /**
  * Created by 世宁 on 2015/1/6 0006.
  */
-define(['worktile/module','worktile/data/entries'],function(module,entries){
+define(['worktile/module','worktile/data/entries','mCustomScrollbar'],function(module,entries){
     module.controller('WorktileController',['$scope',function($scope){
         $scope.entrySortableOptions = {
             connectWith: '.widget-container-col',

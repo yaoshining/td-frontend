@@ -40,6 +40,9 @@
     "headroom.js": "~0.7.0",
     "tinycon": "~0.6.3",
     "angular-ui-calendar": "~0.8.1",
-    "jvectormap": "~2.0.0"
+    "jvectormap": "~2.0.0",
+    "malihu-custom-scrollbar-plugin": "~3.0.7",
+    "id3": "~1.0.2",
+    "aterrien/jQuery-Knob": "~1.2.11"
   }
 }

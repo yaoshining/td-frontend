@@ -194,7 +194,7 @@ require([
             'nprogress',
             'conf/routes',
             'conf/menus',
-            'auth/module',
+            'auth/module'
         ],function(NProgress,routes,menus){
             /*App Module*/
             document.getElementById('loader-wrapper').style.backgroundColor = '#222';
@@ -356,7 +356,12 @@ require([
 
                     }, 1000);
                 }]);
-
+                $.kreate({
+                    tag: 'div',
+                    attr: {
+                        'ng-include':"'src/home/sideplayer.tpl.html'"
+                    }
+                }).appendTo(document.body);
                 /*bootstrap model*/
                 angular.bootstrap($html, ['webApp']);
             });
