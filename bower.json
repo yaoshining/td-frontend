@@ -29,7 +29,6 @@
     "angular-translate-loader-static-files": "~2.4.2",
     "fuelux": "~3.4.0",
     "require-css": "~0.1.8",
-    "three.js": "*",
     "angular-ui-codemirror": "~0.2.1",
     "kreate": "~0.0.5",
     "at-table": "~1.0.4",
@@ -40,9 +39,6 @@
     "headroom.js": "~0.7.0",
     "tinycon": "~0.6.3",
     "angular-ui-calendar": "~0.8.1",
-    "jvectormap": "~2.0.0",
-    "malihu-custom-scrollbar-plugin": "~3.0.7",
-    "id3": "~1.0.2",
-    "aterrien/jQuery-Knob": "~1.2.11"
+    "malihu-custom-scrollbar-plugin": "~3.0.7"
   }
 }

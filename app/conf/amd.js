@@ -30,12 +30,8 @@ requirejs.config({
         'stickUp': '../bower_components/stickUp/stickUp.min',
         'headroom': '../bower_components/headroom.js/dist/headroom.min',
         'angular-headroom': '../bower_components/headroom.js/dist/angular.headroom',
-        'id3': '../bower_components/id3/id3.min',
-        'videogular': '../bower_components/videogular/videogular.min',
-        'videogular-controls': '../bower_components/videogular-controls/controls.min',
-        'videogular-poster': '../bower_components/videogular-poster/poster.min',
-        'videogular-overlay-play': '../bower_components/videogular-overlay-play/overlay-play.min',
-        'videogular-buffering': '../bower_components/videogular-buffering/buffering.min'
+        'angular-xeditable': '../bower_components/angular-xeditable/dist/js/xeditable.min',
+        'id3': '../bower_components/id3/id3.min'
     },
     shim: {
         'codemirror': {
@@ -59,11 +55,7 @@ requirejs.config({
         'jquery-nestable': ['jquery','css!styles/ebp/lists'],
         'ng-nestable': ['jquery-nestable'],
         'angular-headroom': ['headroom'],
-        'videogular': ['angular','angular-sanitize'],
-        'videogular-controls': ['videogular'],
-        'videogular-poster': ['videogular'],
-        'videogular-overlay-play': ['videogular'],
-        'videogular-buffering': ['videogular'],
+        'angular-xeditable': ['angular','css!../bower_components/angular-xeditable/dist/css/xeditable'],
         'stickUp': ['jquery'],
         'flot': ['jquery'],
         'plot': ['flot'],

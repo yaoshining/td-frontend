@@ -1,14 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-    <script src="../../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../vendor/flot/flot.js"></script>
-    <script src="../vendor/flot/flot.pie.js"></script>
-    <script>
-        $(function(){
-            var data = [{
+/**
+ * Created by 世宁 on 2015/1/19 0019.
+ */
+define(['dashboard/module'],function(module){
+    module.controller('DashboardController',[
+        '$scope',
+        function($scope) {
+            $scope.pageTitle = 'dummy';
+            $scope.closeAlert = function(){
+                $scope.alertClosed = true;
+            };
+            $scope.easyPieChartPercent1 = 42;
+            $scope.easyPieChartOptions1 = {
+                animate:{
+                    duration:1000,
+                    enabled:true
+                },
+                barColor: '#3983c2',
+                lineWidth: 4,
+                lineCap:'butt',
+                scaleColor:false,
+                size:46,
+                trackColor:'#E2E2E2'
+            };
+            $scope.easyPieChartPercent2 = 61;
+            $scope.easyPieChartOptions2 = {
+                animate:{
+                    duration:1000,
+                    enabled:true
+                },
+                barColor: 'rgba(255,255,255,0.95)',
+                lineWidth: 3,
+                lineCap:'butt',
+                scaleColor:false,
+                size:39,
+                trackColor:'rgba(255,255,255,0.25)'
+            };
+            $scope.plotData = [{
                 color: "#68BC31",
                 data: 38.7,
                 label: "social networks"
@@ -29,9 +56,7 @@
                 data: 10,
                 label: "other"
             }];
-
-            var placeholder = $("#placeholder");
-            $.plot(placeholder, data, {
+            $scope.plotOptions = {
                 series: {
                     pie: {
                         show: true,
@@ -74,19 +99,11 @@
                     "autoHighlight":true,
                     "mouseActiveRadius":10
                 }
-            });
-            placeholder.bind("plothover", function(event, pos, obj) {
-                if (!obj) {
-                    return;
+            };
+            $scope.plotEvents = {
+                plothover: function(event,pos,obj){
                 }
-
-                var percent = parseFloat(obj.series.percent).toFixed(2);
-                $("#hover").html("<span style='font-weight:bold; color:" + obj.series.color + "'>" + obj.series.label + " (" + percent + "%)</span>");
-            });
-        })
-    </script>
-</head>
-<body>
-    <div id="placeholder" style="width: 502px;height: 150px"></div>
-</body>
-</html>
+            };
+        }
+    ]);
+});

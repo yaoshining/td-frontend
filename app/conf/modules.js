@@ -2,6 +2,14 @@ define(function(){
     return {
         'homeModule': [
             'home/home',
+            'css!styles/ebp/widgets'
+        ],
+        'docModule': [
+            'doc/module'
+        ],
+        'dashboardModule': [
+            'dashboard/module',
+            'dashboard/controllers/DashboardController',
             'css!styles/ebp/infobox',
             'css!styles/ebp/widgets',
             'vendor/jquery.sparkline',
@@ -44,11 +52,6 @@ define(function(){
         'UIAndElementsModule.calendar': [
             'UIAndElements/controllers/calendar/CalendarDemoController'
         ],
-        'UIAndElementsModule.maps': [
-            'UIAndElements/controllers/maps/MapDemoController',
-            'jvectormap-world',
-            'jvectormap-cn'
-        ],
         'UIAndElementsModule.mindMap': [
             'UIAndElements/controllers/TreeViewController',
             'vendor/core/jsmind',
@@ -70,30 +73,11 @@ define(function(){
         'ngNestable': [
             'ng-nestable'
         ],
-        'musicYaoModule': [
-            'musicyao/module',
-            'musicyao/controllers/MusicPlayerController',
-            'musicyao/repositories/MusicYao',
-            'css!styles/ebp/musicyao'
-        ],
-        'musicYaoModule_home': [
-            'musicyao/controllers/MusicHomeController'
-        ],
-        'musicYaoModule_mtv': [
-            'musicyao/controllers/MTVController'
-        ],
         'worktile': [
             'css!styles/ebp/worktile',
             'worktile/module',
             'worktile/controllers/SidebarController',
             'worktile/controllers/WorktileController'
-        ],
-        'mediaModule' : [
-            'media/module'
-        ],
-        'mediaModule.audioPlayer': [
-            'media/controllers/audio/AudioPlayerDemoController',
-            'jquery-knob'
         ],
         'myModule': [
             'email/module2',

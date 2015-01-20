@@ -13,7 +13,33 @@ define(['angular','conf/modules'],function(angular,modules){
                 }
             },
             modules: {
-                'homeModule': modules.homeModule
+                homeModule: modules.homeModule,
+                'ui.sortable': ['ui-sortable'],
+                'angular-table': ['at-table'],
+                'ebp.scroll': ['plugins/core/ebp-scroll']
+            }
+        },
+        doc: {
+            url: '/doc',
+            views: {
+                'sidebar': {
+                    templateUrl: 'src/doc/views/sidebar.tpl.html'
+                }
+            },
+            modules: {
+                homeModule: modules.docModule
+            }
+        },
+        dashboard: {
+            url: '/dashboard',
+            views: {
+                '': {
+                    templateUrl: 'src/dashboard/views/dashboard.tpl.html',
+                    controller: 'DashboardController'
+                }
+            },
+            modules: {
+                'dashboardModule': modules.dashboardModule
             }
         },
         emails: {
@@ -106,19 +132,6 @@ define(['angular','conf/modules'],function(angular,modules){
                 'ui.calendar': ['ui-calendar']
             }
         },
-        'UIAndElements.maps': {
-            url: '/maps',
-            views: {
-                '': {
-                    controller: 'MapDemoController',
-                    templateUrl: 'src/UIAndElements/views/maps/maps.tpl.html'
-                }
-            },
-            modules: {
-                'UIAndElementsModule': modules['UIAndElementsModule.maps'],
-                'ebp.jq': ['plugins/core/ebp-jq']
-            }
-        },
         'UIAndElements.mindMap': {
             url: '/mindmap',
             views: {
@@ -145,64 +158,6 @@ define(['angular','conf/modules'],function(angular,modules){
                 'angular-table': ['at-table']
             }
         },
-        music: {
-            url: '/music',
-            views: {
-                'main.content': {
-                    templateUrl: 'src/musicyao/views/main.html'
-                },
-                'sidebar': {
-                    templateUrl: 'src/musicyao/views/sidebar.html'
-                },
-                'navbar': {
-                    templateUrl: 'src/musicyao/views/navbar.html'
-                }
-            },
-            modules: {
-                'musicYaoModule': modules.musicYaoModule,
-                'ebp.stickUp': ['plugins/core/ebp-stickup'],
-                'com.2fdevs.videogular': ['videogular'],
-                'com.2fdevs.videogular.plugins.controls': ['videogular-controls'],
-                'com.2fdevs.videogular.plugins.overlayplay': ['videogular-overlay-play'],
-                'com.2fdevs.videogular.plugins.buffering': ['videogular-buffering'],
-                'com.2fdevs.videogular.plugins.poster': ['videogular-poster']
-            }
-        },
-        'music.home': {
-            url: '/home',
-            views: {
-                '': {
-                    controller: 'MusicHomeController',
-                    templateUrl: 'src/musicyao/views/recommendation.html'
-                }
-            },
-            modules: {
-                'musicYaoModule': modules['musicYaoModule_home']
-            }
-        },
-        'music.mtv': {
-            url: '/mtv',
-            views: {
-                '': {
-                    controller: 'MTVController',
-                    templateUrl: 'src/musicyao/views/mtv.html'
-                }
-            },
-            modules: {
-                'musicYaoModule': modules['musicYaoModule_mtv']
-            }
-        },
-        'music.mtvdetail': {
-            url: '/mtvdetail',
-            views: {
-                '': {
-                    templateUrl: 'src/musicyao/views/mtvdetail.html'
-                }
-            },
-            modules: {
-                'musicYaoModule': ['musicyao/controllers/VideoPlayerController']
-            }
-        },
         'worktile': {
             url: '/worktile',
             views: {
@@ -218,30 +173,6 @@ define(['angular','conf/modules'],function(angular,modules){
                 'worktileModule': modules.worktile,
                 'ui.sortable': ['ui-sortable'],
                 'ebp.jq': ['plugins/core/ebp-jq']
-            }
-        },
-        'mediaDemo': {
-            url: '/media',
-            views: {
-                '': {
-                    template: "<div ui-view class='fade-in-up' style='position: relative'></div>"
-                }
-            },
-            modules: {
-                'mediaModule': modules.mediaModule,
-                'ebp.jq': ['plugins/core/ebp-jq']
-            }
-        },
-        'mediaDemo.audioPlayer': {
-            url: '/audio',
-            views: {
-                '': {
-                    controller: 'AudioPlayerDemoController',
-                    templateUrl: 'src/media/views/audio/players.tpl.html'
-                }
-            },
-            modules: {
-                'mediaModule': modules['mediaModule.audioPlayer']
             }
         },
         'myState': {

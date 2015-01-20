@@ -356,12 +356,6 @@ require([
 
                     }, 1000);
                 }]);
-                $.kreate({
-                    tag: 'div',
-                    attr: {
-                        'ng-include':"'src/home/sideplayer.tpl.html'"
-                    }
-                }).appendTo(document.body);
                 /*bootstrap model*/
                 angular.bootstrap($html, ['webApp']);
             });

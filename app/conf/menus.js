@@ -4,13 +4,12 @@
 define(function(){
     return {
         '$root': [
-            {name: 'Dashboard',sref: 'home',iconClass: 'fa-tachometer'},
+            {name: 'Dashboard',sref: 'dashboard',iconClass: 'fa-tachometer'},
+            {name: 'Documents',sref: 'doc',iconClass: 'fa-briefcase'},
             {name: 'Email',sref: 'emails',iconClass: 'fa-envelope'},
-            {name: 'MusicYao',sref: 'music.home',iconClass: 'fa-music'},
             {name: 'UI & Elements',sref: 'UIAndElements',iconClass: 'fa-desktop'},
             {name: 'Widgets',sref: 'widgetsDemo',iconClass: 'fa-list-alt'},
-            {name: 'Tasks',sref: 'worktile',iconClass: 'fa-tasks'},
-            {name: 'Media',sref: 'mediaDemo',iconClass: 'fa-headphones'}
+            {name: 'Tasks',sref: 'worktile',iconClass: 'fa-tasks'}
         ],
         'UI & Elements': [
             {name: 'Bootstrap',sref: 'UIAndElements.bootstrap'},
@@ -18,11 +17,7 @@ define(function(){
             {name: 'Tables',sref: 'UIAndElements.tables'},
             {name: 'Nestable List',sref: 'UIAndElements.nestable'},
             {name: 'Calendar',sref: 'UIAndElements.calendar'},
-            {name: 'Maps',sref: 'UIAndElements.maps'},
             {name: 'MindMap',sref: 'UIAndElements.mindMap'}
-        ],
-        'Media': [
-            {name: 'AudioPlayers',sref: 'mediaDemo.audioPlayer'}
         ]
     };
 });

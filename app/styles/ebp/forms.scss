@@ -196,3 +196,14 @@ input[type=checkbox].ebp:checked+.lbl::before,input[type=radio].ebp:checked+.lbl
 input[type=checkbox].ebp:hover+.lbl::before,input[type=radio].ebp:hover+.lbl::before,input[type=checkbox].ebp+.lbl:hover::before,input[type=radio].ebp+.lbl:hover::before {
   border-color: #ff893c
 }
+.form-control, select {
+    border-radius: 0;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    color: #858585;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+}
+select.form-control {
+    padding: 4px 6px;
+}

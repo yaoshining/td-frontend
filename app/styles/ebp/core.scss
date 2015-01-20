@@ -16,7 +16,6 @@
 @import 'widgets';
 @import 'lists';
 @import 'animations';
-@import 'players';
 /***************************  login begin  *********************************/
 .login-container {
   width: 375px;
@@ -125,6 +124,9 @@
 }
 .no-padding {
   padding: 0px !important;
+}
+.no-padding-right {
+    padding-right: 0 !important;
 }
 .no-margin {
     margin: 0px !important;

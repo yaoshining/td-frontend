@@ -3,8 +3,6 @@
  */
 define(['auth/module'],function(authModule){
     authModule.controller('LoginController',['$scope','authService','$location',function($scope,authService,$location){
-            $scope.bgImage = '/app/images/bg/meteorshower2.jpg';
-            $scope.dynamicBgSrc = 'src/roses/snowflake.html';
             $scope.login = function(){
                 var username = $scope.username;
                 var password = $scope.password;
